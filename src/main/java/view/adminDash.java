@@ -9,6 +9,8 @@ package view;
  *
  * @author YOJHAN DAVID
  */
+
+import java.net.URL;
 public class adminDash extends javax.swing.JFrame {
 
     /**
@@ -27,21 +29,115 @@ public class adminDash extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Background = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        Agregar_producto = new javax.swing.JButton();
+        Agregar_trabajo = new javax.swing.JButton();
+        Despedir_trabajador = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("JetBrains Mono", 1, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(153, 0, 153));
+        jLabel1.setText("WELCOME ADMIN");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(118, 15, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/ingeniero-de-software.png"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 80, 60));
+
+        Agregar_producto.setBackground(new java.awt.Color(102, 0, 102));
+        Agregar_producto.setFont(new java.awt.Font("JetBrains Mono", 1, 18)); // NOI18N
+        Agregar_producto.setForeground(new java.awt.Color(255, 255, 255));
+        Agregar_producto.setText("ADD PRODUCT");
+
+        Agregar_trabajo.setBackground(new java.awt.Color(102, 0, 102));
+        Agregar_trabajo.setFont(new java.awt.Font("JetBrains Mono", 1, 18)); // NOI18N
+        Agregar_trabajo.setForeground(new java.awt.Color(255, 255, 255));
+        Agregar_trabajo.setText("ADD WORKER");
+        Agregar_trabajo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Agregar_trabajoActionPerformed(evt);
+            }
+        });
+
+        Despedir_trabajador.setBackground(new java.awt.Color(102, 0, 102));
+        Despedir_trabajador.setFont(new java.awt.Font("JetBrains Mono", 0, 18)); // NOI18N
+        Despedir_trabajador.setForeground(new java.awt.Color(255, 255, 255));
+        Despedir_trabajador.setText("DELETE WORKER");
+        Despedir_trabajador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Despedir_trabajadorActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("JetBrains Mono", 1, 18)); // NOI18N
+        jLabel3.setText("CHOOSE AN OPTION");
+
+        javax.swing.GroupLayout BackgroundLayout = new javax.swing.GroupLayout(Background);
+        Background.setLayout(BackgroundLayout);
+        BackgroundLayout.setHorizontalGroup(
+            BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BackgroundLayout.createSequentialGroup()
+                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(BackgroundLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(BackgroundLayout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Agregar_producto)
+                            .addComponent(Despedir_trabajador)
+                            .addComponent(Agregar_trabajo))
+                        .addGap(0, 450, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(BackgroundLayout.createSequentialGroup()
+                .addGap(222, 222, 222)
+                .addComponent(jLabel3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        BackgroundLayout.setVerticalGroup(
+            BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BackgroundLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel3)
+                .addGap(22, 22, 22)
+                .addComponent(Agregar_producto)
+                .addGap(34, 34, 34)
+                .addComponent(Agregar_trabajo)
+                .addGap(32, 32, 32)
+                .addComponent(Despedir_trabajador)
+                .addContainerGap(82, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(Background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(Background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void Agregar_trabajoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Agregar_trabajoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Agregar_trabajoActionPerformed
+
+    private void Despedir_trabajadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Despedir_trabajadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Despedir_trabajadorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +175,13 @@ public class adminDash extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Agregar_producto;
+    private javax.swing.JButton Agregar_trabajo;
+    private javax.swing.JPanel Background;
+    private javax.swing.JButton Despedir_trabajador;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
