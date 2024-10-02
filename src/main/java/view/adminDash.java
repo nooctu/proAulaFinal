@@ -10,7 +10,9 @@ package view;
  * @author YOJHAN DAVID
  */
 
-import java.net.URL;
+import adminOp.newproduct;
+import adminOp.newWorker;
+
 public class adminDash extends javax.swing.JFrame {
 
     /**
@@ -32,7 +34,6 @@ public class adminDash extends javax.swing.JFrame {
         Background = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         Agregar_producto = new javax.swing.JButton();
         Agregar_trabajo = new javax.swing.JButton();
         Despedir_trabajador = new javax.swing.JButton();
@@ -45,16 +46,19 @@ public class adminDash extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("JetBrains Mono", 1, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(153, 0, 153));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("WELCOME ADMIN");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(118, 15, -1, -1));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/ingeniero-de-software.png"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 80, 60));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, -1, -1));
 
         Agregar_producto.setBackground(new java.awt.Color(102, 0, 102));
         Agregar_producto.setFont(new java.awt.Font("JetBrains Mono", 1, 18)); // NOI18N
         Agregar_producto.setForeground(new java.awt.Color(255, 255, 255));
         Agregar_producto.setText("ADD PRODUCT");
+        Agregar_producto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Agregar_productoActionPerformed(evt);
+            }
+        });
 
         Agregar_trabajo.setBackground(new java.awt.Color(102, 0, 102));
         Agregar_trabajo.setFont(new java.awt.Font("JetBrains Mono", 1, 18)); // NOI18N
@@ -114,7 +118,7 @@ public class adminDash extends javax.swing.JFrame {
                 .addComponent(Agregar_trabajo)
                 .addGap(32, 32, 32)
                 .addComponent(Despedir_trabajador)
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -133,11 +137,25 @@ public class adminDash extends javax.swing.JFrame {
 
     private void Agregar_trabajoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Agregar_trabajoActionPerformed
         // TODO add your handling code here:
+        
+        newWorker access = new newWorker();
+        access.setVisible(true);
+        
+        this.dispose();
     }//GEN-LAST:event_Agregar_trabajoActionPerformed
 
     private void Despedir_trabajadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Despedir_trabajadorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Despedir_trabajadorActionPerformed
+
+    private void Agregar_productoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Agregar_productoActionPerformed
+        // TODO add your handling code here:
+        
+        newproduct access = new newproduct();
+        access.setVisible(true);
+        
+        this.dispose();
+    }//GEN-LAST:event_Agregar_productoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -165,6 +183,9 @@ public class adminDash extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(adminDash.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -180,7 +201,6 @@ public class adminDash extends javax.swing.JFrame {
     private javax.swing.JPanel Background;
     private javax.swing.JButton Despedir_trabajador;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

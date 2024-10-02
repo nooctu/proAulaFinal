@@ -76,7 +76,7 @@
                   <Component id="Agregar_trabajo" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                   <Component id="Despedir_trabajador" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="82" max="32767" attributes="0"/>
+                  <EmptySpace pref="87" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -101,23 +101,12 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="99" green="0" red="99" type="rgb"/>
                 </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="WELCOME ADMIN"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="118" y="15" width="-1" height="-1"/>
-                </Constraint>
-              </Constraints>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel2">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/resources/ingeniero-de-software.png"/>
-                </Property>
-              </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="30" y="10" width="80" height="60"/>
+                  <AbsoluteConstraints x="140" y="10" width="-1" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -136,6 +125,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="ADD PRODUCT"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Agregar_productoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Agregar_trabajo">
           <Properties>
