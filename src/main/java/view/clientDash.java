@@ -5,6 +5,9 @@
  */
 package view;
 
+import clientOP.BuyProduct;
+        
+
 /**
  *
  * @author YOJHAN DAVID
@@ -27,21 +30,133 @@ public class clientDash extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        clientDash = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        BuyProduct1 = new javax.swing.JButton();
+        ViewProduct1 = new javax.swing.JButton();
+        UpdateList1 = new javax.swing.JButton();
+        CanceList1 = new javax.swing.JButton();
+        backLogin1 = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        clientDash.setBackground(new java.awt.Color(204, 204, 255));
+
+        jLabel2.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(153, 0, 153));
+        jLabel2.setText("WELCOM DEAR CLIENT, YOU CAN CHOOSE YOUR KIND OF MENU ");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(37, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(21, 21, 21))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jLabel2)
+                .addContainerGap(25, Short.MAX_VALUE))
+        );
+
+        BuyProduct1.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        BuyProduct1.setText("1.BUY A PRODUCT");
+        BuyProduct1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BuyProduct1ActionPerformed(evt);
+            }
+        });
+
+        ViewProduct1.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        ViewProduct1.setText("2. VIEW PROCUT");
+
+        UpdateList1.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        UpdateList1.setText("3. UPDATE YOUR LIST");
+
+        CanceList1.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        CanceList1.setText("4. CANCEL YOUR LIST");
+
+        backLogin1.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        backLogin1.setText("BACK TO LOGINS");
+        backLogin1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backLogin1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout clientDashLayout = new javax.swing.GroupLayout(clientDash);
+        clientDash.setLayout(clientDashLayout);
+        clientDashLayout.setHorizontalGroup(
+            clientDashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(clientDashLayout.createSequentialGroup()
+                .addGroup(clientDashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(clientDashLayout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addGroup(clientDashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(clientDashLayout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addGroup(clientDashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(UpdateList1)
+                                    .addComponent(BuyProduct1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(111, 111, 111)
+                                .addGroup(clientDashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(ViewProduct1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CanceList1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(backLogin1)))
+                    .addGroup(clientDashLayout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(42, Short.MAX_VALUE))
+        );
+        clientDashLayout.setVerticalGroup(
+            clientDashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(clientDashLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(clientDashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BuyProduct1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ViewProduct1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(61, 61, 61)
+                .addGroup(clientDashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(UpdateList1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CanceList1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
+                .addComponent(backLogin1)
+                .addGap(25, 25, 25))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(clientDash, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(clientDash, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BuyProduct1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuyProduct1ActionPerformed
+        // TODO add your handling code here:
+        BuyProduct access = new BuyProduct();
+        access.setVisible(true);
+
+        this.dispose();
+    }//GEN-LAST:event_BuyProduct1ActionPerformed
+
+    private void backLogin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backLogin1ActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_backLogin1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +194,13 @@ public class clientDash extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BuyProduct1;
+    private javax.swing.JButton CanceList1;
+    private javax.swing.JButton UpdateList1;
+    private javax.swing.JButton ViewProduct1;
+    private javax.swing.JButton backLogin1;
+    private javax.swing.JPanel clientDash;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
 }
