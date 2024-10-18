@@ -156,6 +156,10 @@ public class clientDash extends javax.swing.JFrame {
     private void backLogin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backLogin1ActionPerformed
         // TODO add your handling code here:
         
+        loginUser access = new loginUser();
+        access.setVisible(true);
+        
+        this.dispose();
     }//GEN-LAST:event_backLogin1ActionPerformed
 
     /**
