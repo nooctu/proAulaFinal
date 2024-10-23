@@ -5,6 +5,11 @@
  */
 package view;
 
+import javax.swing.JOptionPane;
+import model.orderSearch;
+import workersOption.finishOrder;
+
+
 /**
  *
  * @author YOJHAN DAVID
@@ -16,6 +21,7 @@ public class workerDash extends javax.swing.JFrame {
      */
     public workerDash() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -30,14 +36,9 @@ public class workerDash extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         processOrder = new javax.swing.JButton();
-        processOrder2 = new javax.swing.JButton();
-        processOrder3 = new javax.swing.JButton();
+        EnterID = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,35 +65,24 @@ public class workerDash extends javax.swing.JFrame {
                 .addGap(21, 21, 21))
         );
 
-        jLabel2.setFont(new java.awt.Font("JetBrains Mono", 1, 24)); // NOI18N
-        jLabel2.setText("ORDER LIST");
-
         jLabel3.setFont(new java.awt.Font("JetBrains Mono", 0, 18)); // NOI18N
-        jLabel3.setText("ID PRODUCT");
-
-        jLabel4.setFont(new java.awt.Font("JetBrains Mono", 0, 14)); // NOI18N
-        jLabel4.setText("2234");
-
-        jLabel5.setFont(new java.awt.Font("JetBrains Mono", 0, 14)); // NOI18N
-        jLabel5.setText("8459");
-
-        jLabel6.setFont(new java.awt.Font("JetBrains Mono", 0, 14)); // NOI18N
-        jLabel6.setText("4561");
+        jLabel3.setText("ENTER ORDERS' ID");
 
         processOrder.setBackground(new java.awt.Color(102, 0, 102));
         processOrder.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
         processOrder.setForeground(new java.awt.Color(255, 255, 255));
-        processOrder.setText("PROCESS ORDER");
+        processOrder.setText("NEXT");
+        processOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                processOrderActionPerformed(evt);
+            }
+        });
 
-        processOrder2.setBackground(new java.awt.Color(102, 0, 102));
-        processOrder2.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
-        processOrder2.setForeground(new java.awt.Color(255, 255, 255));
-        processOrder2.setText("PROCESS ORDER");
-
-        processOrder3.setBackground(new java.awt.Color(102, 0, 102));
-        processOrder3.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
-        processOrder3.setForeground(new java.awt.Color(255, 255, 255));
-        processOrder3.setText("PROCESS ORDER");
+        EnterID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EnterIDActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -102,49 +92,27 @@ public class workerDash extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(261, 261, 261)
-                        .addComponent(jLabel2))
+                        .addGap(253, 253, 253)
+                        .addComponent(EnterID, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(113, 113, 113)
+                        .addGap(233, 233, 233)
                         .addComponent(jLabel3))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(149, 149, 149)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(96, 96, 96)
-                                .addComponent(processOrder))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel6))
-                                .addGap(96, 96, 96)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(processOrder3)
-                                    .addComponent(processOrder2))))))
+                        .addGap(273, 273, 273)
+                        .addComponent(processOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
+                .addGap(27, 27, 27)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(processOrder))
-                .addGap(23, 23, 23)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(processOrder2)
-                    .addComponent(jLabel5))
-                .addGap(23, 23, 23)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(processOrder3)
-                    .addComponent(jLabel6))
-                .addGap(0, 94, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(EnterID, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(processOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 152, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -160,6 +128,41 @@ public class workerDash extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void processOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processOrderActionPerformed
+        // TODO add your handling code here:
+        String id_order = EnterID.getText().trim();
+        
+        //validaciones
+        if (id_order.isEmpty()) {
+        JOptionPane.showMessageDialog(null, "Please, complete the field."+JOptionPane.ERROR_MESSAGE);
+        return;
+        }
+        if (id_order.matches("[a-zA-Z ]+")) {
+        JOptionPane.showMessageDialog(null, "The ID cannot have letters, only numbers" + JOptionPane.ERROR_MESSAGE);
+        return;
+        }
+        
+        
+        // Instancia de la clase que maneja el acceso a orders
+         orderSearch us = new orderSearch();
+         boolean idExitoso = us.accesoOrder(id_order);
+          if (idExitoso) {
+        // Abre la interfaz finishOrder
+        finishOrder access = new finishOrder();
+        access.setVisible(true);
+        this.dispose();  // Cierra la ventana actual si es necesario
+    } else {
+        JOptionPane.showMessageDialog(null, "Order ID not found or invalid.", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+       
+         
+    
+    }//GEN-LAST:event_processOrderActionPerformed
+
+    private void EnterIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnterIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EnterIDActionPerformed
 
     /**
      * @param args the command line arguments
@@ -197,16 +200,11 @@ public class workerDash extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField EnterID;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton processOrder;
-    private javax.swing.JButton processOrder2;
-    private javax.swing.JButton processOrder3;
     // End of variables declaration//GEN-END:variables
 }
