@@ -9,8 +9,6 @@ import javax.swing.JOptionPane;
 import model.mostrarOrder;
 import model.orderSearch;
 
-
-
 /**
  *
  * @author YOJHAN DAVID
@@ -34,11 +32,8 @@ public class workerDash extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-
-
         backLogin1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -53,17 +48,12 @@ public class workerDash extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         txtamount = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-
         txtpaytotal = new javax.swing.JTextField();
-
         processOrder = new javax.swing.JButton();
-        processOrder2 = new javax.swing.JButton();
-        processOrder3 = new javax.swing.JButton();
         backLogin2 = new javax.swing.JButton();
 
         backLogin1.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
-        backLogin1.setText("BACK TO LOGINS");
-
+        backLogin1.setText("BACK TO LOGIN");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -192,43 +182,18 @@ public class workerDash extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(jLabel5)
                     .addComponent(jLabel6))
-
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtBuyer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtnamepro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtamount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtpaytotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 154, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(206, 206, 206)
-                .addComponent(jLabel1)
-                .addContainerGap(233, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addComponent(backLogin2)
-                .addGap(30, 30, 30))
-
+                .addContainerGap())
         );
+
+        jPanel2.add(jPanel1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -238,75 +203,30 @@ public class workerDash extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void processOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processOrderActionPerformed
-        // TODO add your handling code here:
-        String id_order = EnterID.getText().trim();
-        
-        //validaciones
+        String id_order = EnterID.getText();
+
         if (id_order.isEmpty()) {
-        JOptionPane.showMessageDialog(null, "Please, complete the field."+JOptionPane.ERROR_MESSAGE);
-        return;
+            JOptionPane.showMessageDialog(null, "Please, complete the field.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
         }
         if (id_order.matches("[a-zA-Z ]+")) {
-        JOptionPane.showMessageDialog(null, "The ID cannot have letters, only numbers" + JOptionPane.ERROR_MESSAGE);
-        return;
+            JOptionPane.showMessageDialog(null, "The ID cannot have letters, only numbers.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
         }
-        
-        
-        // Instancia de la clase que maneja el acceso a orders
-         orderSearch us = new orderSearch();
-         boolean idExitoso = us.accesoOrder(id_order);
-          if (idExitoso) {
-         mostrarOrder access = new mostrarOrder();
-         access.obtenerinfoOrder(id_order, txtBuyer, txtnamepro, txtamount, txtpaytotal);
-        } else {
-        JOptionPane.showMessageDialog(null, "Order ID not found or invalid.", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-       
-         
-    
     }//GEN-LAST:event_processOrderActionPerformed
 
     private void EnterIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnterIDActionPerformed
-        // TODO add your handling code here:
+        // Leave empty if no specific action is required on EnterIDActionPerformed
     }//GEN-LAST:event_EnterIDActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(workerDash.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(workerDash.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(workerDash.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(workerDash.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new workerDash().setVisible(true);
@@ -315,12 +235,9 @@ public class workerDash extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-
     private javax.swing.JTextField EnterID;
-
     private javax.swing.JButton backLogin1;
     private javax.swing.JButton backLogin2;
-
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
