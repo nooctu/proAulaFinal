@@ -34,6 +34,11 @@ public class workerDash extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+
+
+        backLogin1 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -48,7 +53,17 @@ public class workerDash extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         txtamount = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
+
         txtpaytotal = new javax.swing.JTextField();
+
+        processOrder = new javax.swing.JButton();
+        processOrder2 = new javax.swing.JButton();
+        processOrder3 = new javax.swing.JButton();
+        backLogin2 = new javax.swing.JButton();
+
+        backLogin1.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        backLogin1.setText("BACK TO LOGINS");
+
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -110,6 +125,9 @@ public class workerDash extends javax.swing.JFrame {
 
         txtpaytotal.setEditable(false);
 
+        backLogin2.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        backLogin2.setText("BACK TO LOGIN");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -153,6 +171,10 @@ public class workerDash extends javax.swing.JFrame {
                 .addGap(259, 259, 259)
                 .addComponent(EnterID, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(backLogin2)
+                .addGap(37, 37, 37))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -170,6 +192,7 @@ public class workerDash extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(jLabel5)
                     .addComponent(jLabel6))
+
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtBuyer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -200,6 +223,11 @@ public class workerDash extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addComponent(backLogin2)
+                .addGap(30, 30, 30))
+
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -287,7 +315,12 @@ public class workerDash extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+
     private javax.swing.JTextField EnterID;
+
+    private javax.swing.JButton backLogin1;
+    private javax.swing.JButton backLogin2;
+
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
