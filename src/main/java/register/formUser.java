@@ -24,6 +24,7 @@ public class formUser extends javax.swing.JFrame {
      */
     public formUser() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -208,8 +209,19 @@ public class formUser extends javax.swing.JFrame {
                 // Ejecutar la consulta
                 
                 if (newUser.isEmpty() || newPass.isEmpty() || newEmail.isEmpty() || newRealName.isEmpty()) {
-                    JOptionPane.showMessageDialog(null, "Please, complethe the fields.");
+                    JOptionPane.showMessageDialog(null, "Please, complethe the fields." + JOptionPane.ERROR_MESSAGE);
                     return;
+                }
+                // Validación de que el email contenga "@"
+                if (!newEmail.contains("@")) {
+                 JOptionPane.showMessageDialog(null, "Invalid email address." + JOptionPane.ERROR_MESSAGE);
+                return;
+                }
+
+                // Validación de que el nombre real no contenga números
+                if (!newRealName.matches("[a-zA-Z ]+")) {
+                JOptionPane.showMessageDialog(null, "The real name cannot contain numbers, only letters." + JOptionPane.ERROR_MESSAGE);
+                return;
                 }
                                                     
                 int rowsInserted = pst.executeUpdate();
