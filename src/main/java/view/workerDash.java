@@ -241,9 +241,7 @@ public class workerDash extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -259,7 +257,7 @@ public class workerDash extends javax.swing.JFrame {
         // TODO add your handling code here:
           String orderId = EnterID.getText().trim();
        if (orderId.isEmpty()) {
-        JOptionPane.showMessageDialog(null, "Please , enter the order ID", "Error", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Please , enter the order ID", "Error", JOptionPane.WARNING_MESSAGE);
         return;
     }
         // Confirmar antes de eliminar
@@ -304,11 +302,11 @@ public class workerDash extends javax.swing.JFrame {
         
         //validaciones
         if (id_order.isEmpty()) {
-        JOptionPane.showMessageDialog(null, "Please, complete the field."+JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Please, complete the field.", "Empty Fields" , JOptionPane.WARNING_MESSAGE);
         return;
         }
         if (id_order.matches("[a-zA-Z ]+")) {
-        JOptionPane.showMessageDialog(null, "The ID cannot have letters, only numbers" + JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, "The ID cannot have letters, only numbers" ,"Length error" , JOptionPane.ERROR_MESSAGE);
         return;
         }
         
