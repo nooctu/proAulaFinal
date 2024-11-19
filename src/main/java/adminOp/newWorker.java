@@ -35,12 +35,13 @@ public class newWorker extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        backLogin3 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         nameWorker = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        passWorker = new javax.swing.JTextField();
+        ccWorker = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         emailWorker = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
@@ -49,15 +50,29 @@ public class newWorker extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        backLogin3.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        backLogin3.setText("BACK");
+        backLogin3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backLogin3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 124, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(backLogin3)
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(backLogin3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -92,11 +107,11 @@ public class newWorker extends javax.swing.JFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel3.setText("New password:");
+        jLabel3.setText("CC:");
 
-        passWorker.addActionListener(new java.awt.event.ActionListener() {
+        ccWorker.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passWorkerActionPerformed(evt);
+                ccWorkerActionPerformed(evt);
             }
         });
 
@@ -132,7 +147,7 @@ public class newWorker extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(passWorker, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(ccWorker, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(40, 40, 40)
@@ -159,7 +174,7 @@ public class newWorker extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(passWorker, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ccWorker, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -176,9 +191,9 @@ public class newWorker extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_nameWorkerActionPerformed
 
-    private void passWorkerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passWorkerActionPerformed
+    private void ccWorkerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ccWorkerActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_passWorkerActionPerformed
+    }//GEN-LAST:event_ccWorkerActionPerformed
 
     private void emailWorkerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailWorkerActionPerformed
         // TODO add your handling code here:
@@ -188,7 +203,7 @@ public class newWorker extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         String workername = nameWorker.getText().trim();
-        String workerPass = passWorker.getText().trim();
+        String workerCC = ccWorker.getText().trim();
         String workeremail = emailWorker.getText().trim();
         
         db_productConnection db = new db_productConnection();
@@ -205,19 +220,18 @@ public class newWorker extends javax.swing.JFrame {
                 
                 cn = DriverManager.getConnection(url, user, password);
             
-                String sql = "INSERT INTO userspro (user1, password1, email, rol) VALUES (?, ?, ?, ?)";
+                String sql = "INSERT INTO workersp (nombreworker, ccworker, emailworker) VALUES (?, ?, ?)";
                 PreparedStatement pst = cn.prepareStatement(sql);
                 
                 // Establecer los valores en la consulta
                 pst.setString(1, workername);
-                pst.setString(2, workerPass);
+                pst.setString(2, workerCC);
                 pst.setString(3, workeremail);
-                pst.setString(4, "worker");
                  
 
                 // Ejecutar la consulta
                 
-                if (workername.isEmpty() || workerPass.isEmpty() || workeremail.isEmpty()) {
+                if (workername.isEmpty() || workerCC.isEmpty() || workeremail.isEmpty()) {
                     JOptionPane.showMessageDialog(null, "Please, complethe the fields.");
                     return;
                 }
@@ -240,6 +254,15 @@ public class newWorker extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Error de conexión a la base de datos");
     }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void backLogin3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backLogin3ActionPerformed
+        // TODO add your handling code here:
+
+        adminDash access = new adminDash();
+        access.setVisible(true);
+
+        this.dispose();
+    }//GEN-LAST:event_backLogin3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -277,6 +300,8 @@ public class newWorker extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backLogin3;
+    private javax.swing.JTextField ccWorker;
     private javax.swing.JTextField emailWorker;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
@@ -286,6 +311,5 @@ public class newWorker extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField nameWorker;
-    private javax.swing.JTextField passWorker;
     // End of variables declaration//GEN-END:variables
 }

@@ -12,6 +12,8 @@ package view;
 
 import adminOp.newproduct;
 import adminOp.newWorker;
+import adminOp.listWorker;
+import adminOp.deleteWorker;
 
 public class adminDash extends javax.swing.JFrame {
 
@@ -38,6 +40,7 @@ public class adminDash extends javax.swing.JFrame {
         Agregar_trabajo = new javax.swing.JButton();
         Despedir_trabajador = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        backLogin1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -83,6 +86,14 @@ public class adminDash extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("JetBrains Mono", 1, 18)); // NOI18N
         jLabel3.setText("CHOOSE AN OPTION");
 
+        backLogin1.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        backLogin1.setText("BACK TO LOGINS");
+        backLogin1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backLogin1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout BackgroundLayout = new javax.swing.GroupLayout(Background);
         Background.setLayout(BackgroundLayout);
         BackgroundLayout.setHorizontalGroup(
@@ -104,6 +115,10 @@ public class adminDash extends javax.swing.JFrame {
                 .addGap(222, 222, 222)
                 .addComponent(jLabel3)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(backLogin1)
+                .addGap(22, 22, 22))
         );
         BackgroundLayout.setVerticalGroup(
             BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,7 +133,9 @@ public class adminDash extends javax.swing.JFrame {
                 .addComponent(Agregar_trabajo)
                 .addGap(32, 32, 32)
                 .addComponent(Despedir_trabajador)
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addComponent(backLogin1)
+                .addGap(27, 27, 27))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -146,6 +163,14 @@ public class adminDash extends javax.swing.JFrame {
 
     private void Despedir_trabajadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Despedir_trabajadorActionPerformed
         // TODO add your handling code here:
+        
+        listWorker access = new listWorker();
+        access.setVisible(true);
+        
+        deleteWorker access2 = new deleteWorker();
+        access2.setVisible(true);
+        
+        this.dispose();
     }//GEN-LAST:event_Despedir_trabajadorActionPerformed
 
     private void Agregar_productoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Agregar_productoActionPerformed
@@ -156,6 +181,15 @@ public class adminDash extends javax.swing.JFrame {
         
         this.dispose();
     }//GEN-LAST:event_Agregar_productoActionPerformed
+
+    private void backLogin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backLogin1ActionPerformed
+        // TODO add your handling code here:
+
+        loginUser access = new loginUser();
+        access.setVisible(true);
+
+        this.dispose();
+    }//GEN-LAST:event_backLogin1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -200,6 +234,7 @@ public class adminDash extends javax.swing.JFrame {
     private javax.swing.JButton Agregar_trabajo;
     private javax.swing.JPanel Background;
     private javax.swing.JButton Despedir_trabajador;
+    private javax.swing.JButton backLogin1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;

@@ -4,18 +4,91 @@
  * and open the template in the editor.
  */
 package adminOp;
+import view.adminDash;
+import model.db_workerConnection;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.*;
+import adminOp.listWorker;
+
 
 /**
  *
  * @author YOJHAN DAVID
  */
 public class deleteWorker extends javax.swing.JFrame {
+    
+    
+        listWorker access3 = new listWorker();
 
     /**
      * Creates new form deleteWorker
      */
+    
     public deleteWorker() {
         initComponents();
+    }
+    
+    private void deleteDataDB() {
+        
+        String ccDelete = ccToDelete.getText().trim();
+        String nameDelete = nameToDelete.getText().trim();
+        
+        if(ccDelete.isEmpty() || nameDelete.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "The fields cannot be empty!");
+            return;
+        }
+        
+        if(!isNum(ccDelete)) {
+            JOptionPane.showMessageDialog(null, "This field cannot be have letters");
+            return;
+        }
+        
+        
+        db_workerConnection db = new db_workerConnection();
+        Connection cn = null;
+        
+        try {
+            cn = db.conectar();
+            
+            String sql = "DELETE FROM workersp WHERE ccworker = ? AND nombreworker = ?";
+            
+            java.sql.PreparedStatement pst = cn.prepareStatement(sql);
+            pst.setString(1, ccDelete);  // Asignar el valor de la cédula
+            pst.setString(2, nameDelete);
+            
+            int rowsAffected = pst.executeUpdate();
+            if (rowsAffected > 0) {
+                JOptionPane.showMessageDialog(null, "Sucesfully delete.");
+            } else {
+                JOptionPane.showMessageDialog(null, "There is non-worker with that data.");
+            }
+            
+        }   catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error " + e.getMessage());
+            
+        } finally {
+            try {
+                if (cn != null) cn.close();  // Cerrar la conexión
+                
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Error to close the connection: " + ex.getMessage());
+            }
+        }
+        
+        
+    }
+    
+    private boolean isNum(String input) {
+        try {
+            Long.parseLong(input);  // Intentar convertir a número (usamos Long para cédulas largas)
+            return true;
+        } catch (NumberFormatException e) {
+            return false;  // Si lanza exce pción, no es un número válido
+        }
     }
 
     /**
@@ -27,21 +100,158 @@ public class deleteWorker extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        updateButton = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        ccToDelete = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        nameToDelete = new javax.swing.JTextField();
+        deleteButton = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        updateButton.setFont(new java.awt.Font("JetBrains Mono", 1, 18)); // NOI18N
+        updateButton.setText("REFRESH LIST");
+        updateButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateButtonActionPerformed(evt);
+            }
+        });
+
+        jButton2.setFont(new java.awt.Font("JetBrains Mono", 0, 18)); // NOI18N
+        jButton2.setText("BACK");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(updateButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(63, 63, 63)
+                .addComponent(updateButton)
+                .addGap(98, 98, 98)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jLabel1.setFont(new java.awt.Font("JetBrains Mono", 0, 24)); // NOI18N
+        jLabel1.setText("DELETE WORKER");
+
+        jLabel2.setFont(new java.awt.Font("JetBrains Mono", 0, 18)); // NOI18N
+        jLabel2.setText("Enter CC:");
+
+        ccToDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ccToDeleteActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("JetBrains Mono", 0, 18)); // NOI18N
+        jLabel3.setText("Enter name:");
+
+        deleteButton.setFont(new java.awt.Font("JetBrains Mono", 0, 18)); // NOI18N
+        deleteButton.setText("DELETE");
+        deleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 693, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(157, 157, 157)
+                                .addComponent(jLabel1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(55, 55, 55)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(nameToDelete)
+                                    .addComponent(ccToDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 131, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(200, 200, 200)
+                        .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 397, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(49, 49, 49)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ccToDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nameToDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(65, 65, 65)
+                .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        
+        adminDash access = new adminDash();
+        access.setVisible(true);
+        
+        this.dispose();
+        access3.dispose();
+       
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
+         // TODO add your handling code here:
+        deleteDataDB();
+    }//GEN-LAST:event_deleteButtonActionPerformed
+
+    private void ccToDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ccToDeleteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ccToDeleteActionPerformed
+
+    private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
+        // TODO add your handling code here
+        
+        access3.dispose();
+        
+        access3.updateTable();
+        access3.setVisible(true);
+        
+    }//GEN-LAST:event_updateButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +289,14 @@ public class deleteWorker extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField ccToDelete;
+    private javax.swing.JButton deleteButton;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField nameToDelete;
+    private javax.swing.JButton updateButton;
     // End of variables declaration//GEN-END:variables
 }
