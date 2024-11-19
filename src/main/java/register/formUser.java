@@ -186,7 +186,6 @@ public class formUser extends javax.swing.JFrame {
         if (cn != null) {
             try {
                 // Crear la consulta SQL
-                
                 String url = "jdbc:mysql://localhost:3306/loginpro?characterEncoding=utf8"; // Cambia 'nombredb' por tu base de datos
                 String user = "root"; // Usuario de MySQL
                 String password = "";
@@ -203,37 +202,39 @@ public class formUser extends javax.swing.JFrame {
                 pst.setString(3, newEmail);
                 pst.setString(4, newRealName);
                 pst.setString(5, "client");
-                
-                 
 
                 // Ejecutar la consulta
-                
+                //validacion de que ningun campo debe estar vacio
                 if (newUser.isEmpty() || newPass.isEmpty() || newEmail.isEmpty() || newRealName.isEmpty()) {
-                    JOptionPane.showMessageDialog(null, "Please, complethe the fields." + JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "PLEASE, COMPLETE THE FIELDS.", "FIELDS ERROR" , JOptionPane.WARNING_MESSAGE);
                     return;
                 }
                 // Validación de que el email contenga "@"
-                if (!newEmail.contains("@")) {
-                 JOptionPane.showMessageDialog(null, "Invalid email address." + JOptionPane.ERROR_MESSAGE);
+                if (!newEmail.contains("@") || newEmail.contains(" ")) {
+                 JOptionPane.showMessageDialog(null, "INVALID EMAIL ADDRESS" , "EMAIL ADRESS ERROR", JOptionPane.ERROR_MESSAGE);
                 return;
                 }
 
                 // Validación de que el nombre real no contenga números
                 if (!newRealName.matches("[a-zA-Z ]+")) {
-                JOptionPane.showMessageDialog(null, "The real name cannot contain numbers, only letters." + JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "THE REAL NAME CANNOT CONTAIN NUMBERS, ONLY LETTERS.", "NAME ERROR " , JOptionPane.ERROR_MESSAGE);
                 return;
-                }
-                                                    
-                int rowsInserted = pst.executeUpdate();
-                if (rowsInserted > 0) {
-                    JOptionPane.showMessageDialog(null, "Succesful Registration!");
+                } if (newRealName.length() < 4 || newUser.length() < 4 || newPass.length() < 4 || newEmail.length() < 4) {
+                 JOptionPane.showMessageDialog(null, "THERE ARE FIELDS VERY SHORT, TRY AGAIN, PLEASE.", "SHORTS FIELDS", JOptionPane.ERROR_MESSAGE);   
+                } else {
+                     int rowsInserted = pst.executeUpdate();
+                      if (rowsInserted > 0) {
+                    JOptionPane.showMessageDialog(null, "SUCESSFULL REGISTRATION!");
                     
                     loginUser returnMain = new loginUser();
                     returnMain.setVisible(true);
                     
                     this.dispose();
                 }
+                      
+                }
                 
+        
 
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Error to register data: " + e);
@@ -241,6 +242,7 @@ public class formUser extends javax.swing.JFrame {
         } else {
         JOptionPane.showMessageDialog(null, "Error de conexión a la base de datos");
     }
+       //Llave del método
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
