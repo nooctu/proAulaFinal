@@ -3,8 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package clientOP;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import model.productSearch;
+import model.db_productConnection;
 
 
 /**
@@ -19,6 +24,7 @@ public class Drinks extends javax.swing.JFrame {
      */
     public Drinks() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -79,12 +85,27 @@ public class Drinks extends javax.swing.JFrame {
 
         PEPSI.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
         PEPSI.setText("PEPSI / 1500");
+        PEPSI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PEPSIActionPerformed(evt);
+            }
+        });
 
         PonyMalta.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
         PonyMalta.setText("PONY MALTA / 1300");
+        PonyMalta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PonyMaltaActionPerformed(evt);
+            }
+        });
 
         WATHER.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
         WATHER.setText("BOTTLE OF WATHER / 1000");
+        WATHER.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WATHERActionPerformed(evt);
+            }
+        });
 
         SPRITE.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
         SPRITE.setText("SPRITE / 1300");
@@ -104,15 +125,35 @@ public class Drinks extends javax.swing.JFrame {
 
         Fanta.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
         Fanta.setText("FANTA / 1700");
+        Fanta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FantaActionPerformed(evt);
+            }
+        });
 
         CIFRUT.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
         CIFRUT.setText("CIFRUT / 1300");
+        CIFRUT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CIFRUTActionPerformed(evt);
+            }
+        });
 
         JUICES.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
         JUICES.setText("JUICES / 1300");
+        JUICES.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JUICESActionPerformed(evt);
+            }
+        });
 
         YOGURT.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
         YOGURT.setText("YOGURT / 1800");
+        YOGURT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                YOGURTActionPerformed(evt);
+            }
+        });
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -309,9 +350,9 @@ public class Drinks extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(KolaRoman, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(PonyMalta))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(PonyMalta)
+                            .addComponent(KolaRoman, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Fanta)
@@ -381,10 +422,20 @@ public class Drinks extends javax.swing.JFrame {
 
     private void KolaRomanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KolaRomanActionPerformed
         // TODO add your handling code here:
+        
+        idProduct.setText("7411");
+        nameProduct.setText("Kola Roman");
+        amountProduct.setText("1");
+        priceProduct.setText("1600");
     }//GEN-LAST:event_KolaRomanActionPerformed
 
     private void SPRITEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SPRITEActionPerformed
         // TODO add your handling code here:
+        
+        idProduct.setText("6898");
+        nameProduct.setText("Sprite");
+        amountProduct.setText("1");
+        priceProduct.setText("1300");
     }//GEN-LAST:event_SPRITEActionPerformed
 
     private void btnconfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnconfirmActionPerformed
@@ -394,10 +445,9 @@ public class Drinks extends javax.swing.JFrame {
         String nameToRow = nameProduct.getText();
         String amountToRow = amountProduct.getText();
         String priceToRow = priceProduct.getText();
-        String typeToRow = "Drinks";
                 
         productSearch ps = new productSearch();
-        boolean busquedaExitosa = ps.findProduct(nameToRow, typeToRow, amountToRow, priceToRow);
+        boolean busquedaExitosa = ps.findProduct(nameToRow, priceToRow);
         
         if (busquedaExitosa) {
                     
@@ -431,6 +481,46 @@ public class Drinks extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Inexistent product");
         }
+        
+        String collect = amountProduct.getText().trim();
+        String collectName = nameProduct.getText().trim();
+        int substract = Integer.parseInt(collect);
+                
+        db_productConnection db = new db_productConnection();
+        
+        try {
+            Connection cn = db.conectar();
+
+            String consult = "SELECT cantidadproducto, nombreproducto FROM productsp WHERE nombreproducto = ?";
+            PreparedStatement pstConsulta = cn.prepareStatement(consult);
+            pstConsulta.setString(1, collectName);
+            ResultSet rs = pstConsulta.executeQuery();
+
+        if (rs.next()) {
+            int stockActual = rs.getInt("cantidadproducto");
+            if (stockActual > substract) {
+                // Realizar la resta
+                String sql = "UPDATE productsp SET cantidadproducto = cantidadproducto - ? WHERE nombreproducto = ?";
+                PreparedStatement pst = cn.prepareStatement(sql);
+                pst.setInt(1, substract);
+                pst.setString(2, collectName);
+
+                int filasAfectadas = pst.executeUpdate();
+                if (filasAfectadas > 0) {
+                    JOptionPane.showMessageDialog(null, "Amount substracted successfully.");
+                } else {
+                    JOptionPane.showMessageDialog(null, "An error ocurred.");
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "This product doesn't have enough stock to sell it.");
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Inexistent Product.");
+        }
+
+    } catch (SQLException e) {
+        JOptionPane.showMessageDialog(null, "Error: " + e);
+    }
     }//GEN-LAST:event_btnconfirmActionPerformed
 
     private void Back2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back2ActionPerformed
@@ -440,13 +530,14 @@ public class Drinks extends javax.swing.JFrame {
 
         this.dispose();
         
-        
-        
     }//GEN-LAST:event_Back2ActionPerformed
 
     private void COCACOLAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_COCACOLAActionPerformed
         // TODO add your handling code here:
-
+        idProduct.setText("4574");
+        nameProduct.setText("Cocacola");
+        amountProduct.setText("1");
+        priceProduct.setText("2000");
     }//GEN-LAST:event_COCACOLAActionPerformed
 
     private void idProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idProductActionPerformed
@@ -464,6 +555,69 @@ public class Drinks extends javax.swing.JFrame {
         amountProduct.setText("");
         priceProduct.setText("");
     }//GEN-LAST:event_UPDATEActionPerformed
+
+    private void PonyMaltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PonyMaltaActionPerformed
+        // TODO add your handling code here:
+        
+        idProduct.setText("2873");
+        nameProduct.setText("Pony Malta");
+        amountProduct.setText("1");
+        priceProduct.setText("2500");
+    }//GEN-LAST:event_PonyMaltaActionPerformed
+
+    private void FantaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FantaActionPerformed
+        // TODO add your handling code here:
+        
+        idProduct.setText("5647");
+        nameProduct.setText("Fanta");
+        amountProduct.setText("1");
+        priceProduct.setText("1700");
+    }//GEN-LAST:event_FantaActionPerformed
+
+    private void PEPSIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PEPSIActionPerformed
+        // TODO add your handling code here:
+        
+        idProduct.setText("6546");
+        nameProduct.setText("Pepsi");
+        amountProduct.setText("1");
+        priceProduct.setText("1500");
+    }//GEN-LAST:event_PEPSIActionPerformed
+
+    private void CIFRUTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CIFRUTActionPerformed
+        // TODO add your handling code here:
+        
+        idProduct.setText("9512");
+        nameProduct.setText("Cifrut");
+        amountProduct.setText("1");
+        priceProduct.setText("1300");
+    }//GEN-LAST:event_CIFRUTActionPerformed
+
+    private void WATHERActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WATHERActionPerformed
+        // TODO add your handling code here:
+        
+        idProduct.setText("1232");
+        nameProduct.setText("Water");
+        amountProduct.setText("1");
+        priceProduct.setText("1000");
+    }//GEN-LAST:event_WATHERActionPerformed
+
+    private void JUICESActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JUICESActionPerformed
+        // TODO add your handling code here:
+        
+        idProduct.setText("1623");
+        nameProduct.setText("Juices");
+        amountProduct.setText("1");
+        priceProduct.setText("1300");
+    }//GEN-LAST:event_JUICESActionPerformed
+
+    private void YOGURTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_YOGURTActionPerformed
+        // TODO add your handling code here:
+        
+        idProduct.setText("4745");
+        nameProduct.setText("Yogurt");
+        amountProduct.setText("1");
+        priceProduct.setText("1800");
+    }//GEN-LAST:event_YOGURTActionPerformed
 
     /**
      * @param args the command line arguments

@@ -128,9 +128,9 @@
                           <Group type="102" attributes="0">
                               <Component id="jPanel1" max="32767" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="KolaRoman" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
-                                  <Component id="PonyMalta" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="PonyMalta" min="-2" max="-2" attributes="0"/>
+                                  <Component id="KolaRoman" min="-2" pref="23" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -178,6 +178,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="PEPSI / 1500"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PEPSIActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="PonyMalta">
               <Properties>
@@ -186,6 +189,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="PONY MALTA / 1300"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PonyMaltaActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="WATHER">
               <Properties>
@@ -194,6 +200,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="BOTTLE OF WATHER / 1000"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="WATHERActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="SPRITE">
               <Properties>
@@ -224,6 +233,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="FANTA / 1700"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FantaActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="CIFRUT">
               <Properties>
@@ -232,6 +244,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="CIFRUT / 1300"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CIFRUTActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="JUICES">
               <Properties>
@@ -240,6 +255,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="JUICES / 1300"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JUICESActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="YOGURT">
               <Properties>
@@ -248,6 +266,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="YOGURT / 1800"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="YOGURTActionPerformed"/>
+              </Events>
             </Component>
             <Container class="javax.swing.JPanel" name="jPanel3">
               <Properties>
