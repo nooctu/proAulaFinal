@@ -394,9 +394,10 @@ public class Drinks extends javax.swing.JFrame {
         String nameToRow = nameProduct.getText();
         String amountToRow = amountProduct.getText();
         String priceToRow = priceProduct.getText();
+        String typeToRow = "Drinks";
                 
         productSearch ps = new productSearch();
-        boolean busquedaExitosa = ps.findProduct(nameToRow, amountToRow, priceToRow);
+        boolean busquedaExitosa = ps.findProduct(nameToRow, typeToRow, amountToRow, priceToRow);
         
         if (busquedaExitosa) {
                     

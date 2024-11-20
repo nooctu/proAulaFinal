@@ -8,13 +8,21 @@ import javax.swing.JOptionPane;
 
 public class productSearch {
 
+    /**
+     *
+     * @param nameprod
+     * @param typeprod
+     * @param precioprod
+     * @param cantidadprod
+     * @return
+     */
     public boolean findProduct(String nameprod, String typeprod, String precioprod, String cantidadprod) {
         db_productConnection db = new db_productConnection();
         boolean accesoCorrecto = false;
 
         try {
             Connection cn = db.conectar();
-            String sql = "SELECT nombreproducto, tipoproducto, precioproducto, cantidadproducto FROM producstp WHERE nombreproducto = ? AND tipoproducto = ? AND precioproducto = ? AND cantidadproducto = ?";
+            String sql = "SELECT nombreproducto, tipoproducto, precioproducto, cantidadproducto FROM productsp WHERE nombreproducto = ? AND tipoproducto = ? AND precioproducto = ? AND cantidadproducto = ?";
             PreparedStatement pst = cn.prepareStatement(sql);
             pst.setString(1, nameprod);
             pst.setString(2, typeprod);
@@ -31,9 +39,5 @@ public class productSearch {
         }
 
         return accesoCorrecto;
-    }
-
-    public boolean findProduct(String nameToRow, String amountToRow, String priceToRow) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
