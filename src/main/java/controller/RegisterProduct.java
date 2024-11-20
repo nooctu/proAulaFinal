@@ -6,7 +6,7 @@ package controller;
 import clientOP.Drinks;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import model.ListProducts;
+import clientOP.ListProducts;
 
 
 /**
@@ -25,7 +25,7 @@ public class RegisterProduct implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource()==frm_rp.btnconfirm) {
             ListProducts lp = new ListProducts ();
-            lp.showTable (frm_rp.table);
+            lp.showTable (frm_rp.tableproducts);
             
         cleanAll1 ();
     }
@@ -33,9 +33,9 @@ public class RegisterProduct implements ActionListener {
     }
 
     private void cleanAll1() {
-        frm_rp.NAME.setText("");
-        frm_rp.AMOUNT.setText("");
-        frm_rp.PRICE.setText ("");
+        frm_rp.nameProduct.setText("");
+        frm_rp.amountProduct.setText("");
+        frm_rp.priceProduct.setText ("");
     }
     
     

@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package model;
+package clientOP;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -13,6 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.table.DefaultTableModel;
+import model.db_productConnection;
 
 /**
  *
@@ -54,7 +55,7 @@ public class ListProducts {
         String url = "jdbc:mysql://localhost:3306/loginpro?characterEncoding=utf8";
         String user = "root";
         String password = "";
-        String query = "SELECT * FROM orders";
+        String query = "SELECT * FROM productsp";
 
         try (Connection con = DriverManager.getConnection(url, user, password);
              Statement st = con.createStatement();
@@ -74,7 +75,7 @@ public class ListProducts {
 
             table.setModel(model); // Asignar el modelo a la tabla
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error 404 to conect with the data base: " + e.getMessage(),
+            JOptionPane.showMessageDialog(null, "Error to conect with the data base: " + e.getMessage(),
                     "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
