@@ -4,12 +4,15 @@
  */
 package clientOP;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import model.db_ordersConnection;
 import model.productSearch;
 import model.db_productConnection;
+import view.adminDash;
 
 
 /**
@@ -507,7 +510,7 @@ public class Drinks extends javax.swing.JFrame {
 
                 int filasAfectadas = pst.executeUpdate();
                 if (filasAfectadas > 0) {
-                    JOptionPane.showMessageDialog(null, "Amount substracted successfully.");
+                    JOptionPane.showMessageDialog(null, "Amount substracted successfully. Thanks for buying with us");
                 } else {
                     JOptionPane.showMessageDialog(null, "An error ocurred.");
                 }
@@ -520,6 +523,47 @@ public class Drinks extends javax.swing.JFrame {
 
     } catch (SQLException e) {
         JOptionPane.showMessageDialog(null, "Error: " + e);
+    }
+        
+        
+    db_ordersConnection db2 = new db_ordersConnection();
+        Connection cn = db2.conectar();
+        
+                if (cn != null) {
+            try {
+            
+                String sql = "INSERT INTO orders (nameproduct, amount, totalpay, idOrder) VALUES (?, ?, ?, ?)";
+                PreparedStatement pst = cn.prepareStatement(sql);
+                
+                // Establecer los valores en la consulta
+                pst.setString(1, nameToRow);
+                pst.setString(2, amountToRow);
+                pst.setString(3, priceToRow * amountToRow);
+                 
+
+                // Ejecutar la consulta
+                
+                if (workername.isEmpty() || workerCC.isEmpty() || workeremail.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "Please, complethe the fields.");
+                    return;
+                }
+                                                    
+                int rowsInserted = pst.executeUpdate();
+                if (rowsInserted > 0) {
+                    JOptionPane.showMessageDialog(null, "Succesful Registration!");
+                    
+                    adminDash returnMain = new adminDash();
+                    returnMain.setVisible(true);
+                    
+                    this.dispose();
+                }
+                
+
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Error to register data: " + e);
+            }
+        } else {
+        JOptionPane.showMessageDialog(null, "Error de conexión a la base de datos");
     }
     }//GEN-LAST:event_btnconfirmActionPerformed
 

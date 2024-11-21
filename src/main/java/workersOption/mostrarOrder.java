@@ -20,9 +20,9 @@ import model.db_connection;
  */
 public class mostrarOrder {
     
-    public void obtenerinfoOrder(String idOrder,JTextField txtBuyer, JTextField txtnamepro,JTextField txtamount,JTextField txttotalpay){
+    public void obtenerinfoOrder(String idOrder, JTextField txtnamepro,JTextField txtamount,JTextField txttotalpay){
     db_connection objetoConexion = new db_connection();
-    String sql = "SELECT buyer, nameproducts, amount, totalpay FROM orders WHERE idOrder = ?";
+    String sql = "SELECT nameproducts, amount, totalpay FROM orders WHERE idOrder = ?";
 
     try (Connection conexion = objetoConexion.conectar();
          PreparedStatement pstmt = conexion.prepareStatement(sql)) {
@@ -32,7 +32,6 @@ public class mostrarOrder {
 
         if (rs.next()) {
             // Asignamos los valores obtenidos a los JTextFields correspondientes
-            txtBuyer.setText(rs.getString("buyer"));
             txtnamepro.setText(rs.getString("nameproducts"));
             txtamount.setText(rs.getString("amount"));
             txttotalpay.setText(rs.getString("totalpay"));

@@ -316,7 +316,7 @@ public class workerDash extends javax.swing.JFrame {
          boolean idExitoso = us.accesoOrder(id_order);
           if (idExitoso) {
          mostrarOrder access = new mostrarOrder();
-         access.obtenerinfoOrder(id_order, txtBuyer, txtnamepro, txtamount, txtpaytotal);
+         access.obtenerinfoOrder(id_order, txtnamepro, txtamount, txtpaytotal);
         } else {
         JOptionPane.showMessageDialog(null, "Order ID not found or invalid.", "Error", JOptionPane.ERROR_MESSAGE);
         }
