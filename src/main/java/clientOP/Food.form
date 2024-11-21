@@ -90,27 +90,26 @@
                       <EmptySpace min="39" pref="39" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="WATHER" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="SPRITE" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="PonyMalta" min="-2" pref="196" max="-2" attributes="0"/>
-                                  <Component id="COCACOLA" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="PEPSI" alignment="1" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="detodito" alignment="0" pref="196" max="32767" attributes="0"/>
+                                  <Component id="golpeC" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="bandeja" pref="196" max="32767" attributes="0"/>
+                                  <Component id="sopa" max="32767" attributes="0"/>
+                                  <Component id="doritos" alignment="1" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="YOGURT" alignment="0" min="-2" pref="152" max="-2" attributes="0"/>
-                                  <Component id="JUICES" alignment="0" min="-2" pref="152" max="-2" attributes="0"/>
-                                  <Component id="CIFRUT" min="-2" pref="152" max="-2" attributes="0"/>
-                                  <Component id="Fanta" min="-2" pref="152" max="-2" attributes="0"/>
-                                  <Component id="KolaRoman" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="arrozConHuevo" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="arroz" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="onlySopa" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="papasFritas" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Component id="jPanel1" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                       <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -127,29 +126,26 @@
                               <Component id="jPanel1" max="32767" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="PonyMalta" min="-2" max="-2" attributes="0"/>
-                                  <Component id="KolaRoman" min="-2" pref="23" max="-2" attributes="0"/>
+                                  <Component id="bandeja" min="-2" max="-2" attributes="0"/>
+                                  <Component id="arrozConHuevo" min="-2" pref="23" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="Fanta" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="COCACOLA" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="onlySopa" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="sopa" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="PEPSI" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="CIFRUT" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="doritos" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="arroz" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="WATHER" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="JUICES" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="detodito" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="papasFritas" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="YOGURT" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="SPRITE" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="golpeC" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -158,114 +154,103 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="COCACOLA">
+            <Component class="javax.swing.JButton" name="sopa">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="JetBrains Mono" size="12" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="COCACOLA / 2000"/>
+                <Property name="text" type="java.lang.String" value="SOPA Y SECO / 10000"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="COCACOLAActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sopaActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="PEPSI">
+            <Component class="javax.swing.JButton" name="doritos">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="JetBrains Mono" size="12" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="PEPSI / 1500"/>
+                <Property name="text" type="java.lang.String" value="DORITOS / 2300"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PEPSIActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="doritosActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="PonyMalta">
+            <Component class="javax.swing.JButton" name="bandeja">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="JetBrains Mono" size="12" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="PONY MALTA / 1300"/>
+                <Property name="text" type="java.lang.String" value="BANDEJA PAISA / 32000"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PonyMaltaActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bandejaActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="WATHER">
+            <Component class="javax.swing.JButton" name="detodito">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="JetBrains Mono" size="12" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="BOTTLE OF WATHER / 1000"/>
+                <Property name="text" type="java.lang.String" value="DETODITO / 2000"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="WATHERActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="detoditoActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="SPRITE">
+            <Component class="javax.swing.JButton" name="golpeC">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="JetBrains Mono" size="12" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="SPRITE / 1300"/>
+                <Property name="text" type="java.lang.String" value="GOLPE / 2300"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SPRITEActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="golpeCActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="KolaRoman">
+            <Component class="javax.swing.JButton" name="arrozConHuevo">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="JetBrains Mono" size="12" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="KOLA ROMAN / 1600"/>
+                <Property name="text" type="java.lang.String" value="ARROZ CON HUEVO / 12000"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="KolaRomanActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="arrozConHuevoActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="Fanta">
+            <Component class="javax.swing.JButton" name="onlySopa">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="JetBrains Mono" size="12" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="FANTA / 1700"/>
+                <Property name="text" type="java.lang.String" value="SOPA / 8000"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FantaActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="onlySopaActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="CIFRUT">
+            <Component class="javax.swing.JButton" name="arroz">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="JetBrains Mono" size="12" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="CIFRUT / 1300"/>
+                <Property name="text" type="java.lang.String" value="PORCI&#xd3;N ARROZ / 5000"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CIFRUTActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="arrozActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="JUICES">
+            <Component class="javax.swing.JButton" name="papasFritas">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="JetBrains Mono" size="12" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="JUICES / 1300"/>
+                <Property name="text" type="java.lang.String" value="PORCI&#xd3;N PAPAS FRITAS / 4000"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JUICESActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="YOGURT">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="JetBrains Mono" size="12" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="YOGURT / 1800"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="YOGURTActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="papasFritasActionPerformed"/>
               </Events>
             </Component>
             <Container class="javax.swing.JPanel" name="jPanel3">

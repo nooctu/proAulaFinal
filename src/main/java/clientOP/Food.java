@@ -19,13 +19,13 @@ import view.adminDash;
  *
  * @author kenie
  */
-public class Drinks extends javax.swing.JFrame {
+public class Food extends javax.swing.JFrame {
     
 
     /**
      * Creates new form Drinks
      */
-    public Drinks() {
+    public Food() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -42,16 +42,15 @@ public class Drinks extends javax.swing.JFrame {
         drinks = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        COCACOLA = new javax.swing.JButton();
-        PEPSI = new javax.swing.JButton();
-        PonyMalta = new javax.swing.JButton();
-        WATHER = new javax.swing.JButton();
-        SPRITE = new javax.swing.JButton();
-        KolaRoman = new javax.swing.JButton();
-        Fanta = new javax.swing.JButton();
-        CIFRUT = new javax.swing.JButton();
-        JUICES = new javax.swing.JButton();
-        YOGURT = new javax.swing.JButton();
+        sopa = new javax.swing.JButton();
+        doritos = new javax.swing.JButton();
+        bandeja = new javax.swing.JButton();
+        detodito = new javax.swing.JButton();
+        golpeC = new javax.swing.JButton();
+        arrozConHuevo = new javax.swing.JButton();
+        onlySopa = new javax.swing.JButton();
+        arroz = new javax.swing.JButton();
+        papasFritas = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -78,83 +77,75 @@ public class Drinks extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("JetBrains Mono", 0, 18)); // NOI18N
         jLabel1.setText("Choose one or more drink");
 
-        COCACOLA.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
-        COCACOLA.setText("COCACOLA / 2000");
-        COCACOLA.addActionListener(new java.awt.event.ActionListener() {
+        sopa.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        sopa.setText("SOPA Y SECO / 10000");
+        sopa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                COCACOLAActionPerformed(evt);
+                sopaActionPerformed(evt);
             }
         });
 
-        PEPSI.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
-        PEPSI.setText("PEPSI / 1500");
-        PEPSI.addActionListener(new java.awt.event.ActionListener() {
+        doritos.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        doritos.setText("DORITOS / 2300");
+        doritos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PEPSIActionPerformed(evt);
+                doritosActionPerformed(evt);
             }
         });
 
-        PonyMalta.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
-        PonyMalta.setText("PONY MALTA / 1300");
-        PonyMalta.addActionListener(new java.awt.event.ActionListener() {
+        bandeja.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        bandeja.setText("BANDEJA PAISA / 32000");
+        bandeja.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PonyMaltaActionPerformed(evt);
+                bandejaActionPerformed(evt);
             }
         });
 
-        WATHER.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
-        WATHER.setText("BOTTLE OF WATHER / 1000");
-        WATHER.addActionListener(new java.awt.event.ActionListener() {
+        detodito.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        detodito.setText("DETODITO / 2000");
+        detodito.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                WATHERActionPerformed(evt);
+                detoditoActionPerformed(evt);
             }
         });
 
-        SPRITE.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
-        SPRITE.setText("SPRITE / 1300");
-        SPRITE.addActionListener(new java.awt.event.ActionListener() {
+        golpeC.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        golpeC.setText("GOLPE / 2300");
+        golpeC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SPRITEActionPerformed(evt);
+                golpeCActionPerformed(evt);
             }
         });
 
-        KolaRoman.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
-        KolaRoman.setText("KOLA ROMAN / 1600");
-        KolaRoman.addActionListener(new java.awt.event.ActionListener() {
+        arrozConHuevo.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        arrozConHuevo.setText("ARROZ CON HUEVO / 12000");
+        arrozConHuevo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                KolaRomanActionPerformed(evt);
+                arrozConHuevoActionPerformed(evt);
             }
         });
 
-        Fanta.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
-        Fanta.setText("FANTA / 1700");
-        Fanta.addActionListener(new java.awt.event.ActionListener() {
+        onlySopa.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        onlySopa.setText("SOPA / 8000");
+        onlySopa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FantaActionPerformed(evt);
+                onlySopaActionPerformed(evt);
             }
         });
 
-        CIFRUT.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
-        CIFRUT.setText("CIFRUT / 1300");
-        CIFRUT.addActionListener(new java.awt.event.ActionListener() {
+        arroz.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        arroz.setText("PORCIÓN ARROZ / 5000");
+        arroz.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CIFRUTActionPerformed(evt);
+                arrozActionPerformed(evt);
             }
         });
 
-        JUICES.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
-        JUICES.setText("JUICES / 1300");
-        JUICES.addActionListener(new java.awt.event.ActionListener() {
+        papasFritas.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        papasFritas.setText("PORCIÓN PAPAS FRITAS / 4000");
+        papasFritas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JUICESActionPerformed(evt);
-            }
-        });
-
-        YOGURT.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
-        YOGURT.setText("YOGURT / 1800");
-        YOGURT.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                YOGURTActionPerformed(evt);
+                papasFritasActionPerformed(evt);
             }
         });
 
@@ -323,23 +314,22 @@ public class Drinks extends javax.swing.JFrame {
                 .addGap(39, 39, 39)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(WATHER, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(SPRITE, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(PonyMalta, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(COCACOLA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(PEPSI, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(detodito, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
+                            .addComponent(golpeC, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(bandeja, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
+                            .addComponent(sopa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(doritos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(YOGURT, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(JUICES, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(CIFRUT, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Fanta, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(KolaRoman)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(arrozConHuevo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(arroz, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(onlySopa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(papasFritas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -353,24 +343,22 @@ public class Drinks extends javax.swing.JFrame {
                         .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(PonyMalta)
-                            .addComponent(KolaRoman, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(bandeja)
+                            .addComponent(arrozConHuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Fanta)
-                            .addComponent(COCACOLA))
+                            .addComponent(onlySopa)
+                            .addComponent(sopa))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(PEPSI)
-                            .addComponent(CIFRUT))
+                            .addComponent(doritos)
+                            .addComponent(arroz))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(WATHER)
-                            .addComponent(JUICES))
+                            .addComponent(detodito)
+                            .addComponent(papasFritas))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(YOGURT)
-                            .addComponent(SPRITE))
+                        .addComponent(golpeC)
                         .addGap(58, 58, 58))))
         );
 
@@ -422,23 +410,23 @@ public class Drinks extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void KolaRomanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KolaRomanActionPerformed
+    private void arrozConHuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arrozConHuevoActionPerformed
         // TODO add your handling code here:
         
         idProduct.setText("7411");
-        nameProduct.setText("Kola Roman");
+        nameProduct.setText("Arroz con huevo");
         amountProduct.setText("1");
-        priceProduct.setText("1600");
-    }//GEN-LAST:event_KolaRomanActionPerformed
+        priceProduct.setText("12000");
+    }//GEN-LAST:event_arrozConHuevoActionPerformed
 
-    private void SPRITEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SPRITEActionPerformed
+    private void golpeCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_golpeCActionPerformed
         // TODO add your handling code here:
         
         idProduct.setText("6898");
-        nameProduct.setText("Sprite");
+        nameProduct.setText("Golpe con todo");
         amountProduct.setText("1");
-        priceProduct.setText("1300");
-    }//GEN-LAST:event_SPRITEActionPerformed
+        priceProduct.setText("2300");
+    }//GEN-LAST:event_golpeCActionPerformed
 
     private void btnconfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnconfirmActionPerformed
         // TODO add your handling code here:
@@ -570,13 +558,13 @@ public class Drinks extends javax.swing.JFrame {
         
     }//GEN-LAST:event_Back2ActionPerformed
 
-    private void COCACOLAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_COCACOLAActionPerformed
+    private void sopaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sopaActionPerformed
         // TODO add your handling code here:
-        idProduct.setText("4574");
-        nameProduct.setText("Cocacola");
+        idProduct.setText("4121");
+        nameProduct.setText("Sopa y seco");
         amountProduct.setText("1");
-        priceProduct.setText("2000");
-    }//GEN-LAST:event_COCACOLAActionPerformed
+        priceProduct.setText("10000");
+    }//GEN-LAST:event_sopaActionPerformed
 
     private void idProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idProductActionPerformed
         // TODO add your handling code here:
@@ -594,68 +582,59 @@ public class Drinks extends javax.swing.JFrame {
         priceProduct.setText("");
     }//GEN-LAST:event_UPDATEActionPerformed
 
-    private void PonyMaltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PonyMaltaActionPerformed
+    private void bandejaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bandejaActionPerformed
         // TODO add your handling code here:
         
-        idProduct.setText("2873");
-        nameProduct.setText("Pony Malta");
+        idProduct.setText("7454");
+        nameProduct.setText("Bandeja Paisa");
         amountProduct.setText("1");
-        priceProduct.setText("2500");
-    }//GEN-LAST:event_PonyMaltaActionPerformed
+        priceProduct.setText("32000");
+    }//GEN-LAST:event_bandejaActionPerformed
 
-    private void FantaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FantaActionPerformed
+    private void onlySopaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onlySopaActionPerformed
         // TODO add your handling code here:
         
-        idProduct.setText("5647");
-        nameProduct.setText("Fanta");
+        idProduct.setText("7412");
+        nameProduct.setText("Sopa");
         amountProduct.setText("1");
-        priceProduct.setText("1700");
-    }//GEN-LAST:event_FantaActionPerformed
+        priceProduct.setText("8000");
+    }//GEN-LAST:event_onlySopaActionPerformed
 
-    private void PEPSIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PEPSIActionPerformed
+    private void doritosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doritosActionPerformed
         // TODO add your handling code here:
         
-        idProduct.setText("6546");
-        nameProduct.setText("Pepsi");
+        idProduct.setText("6847");
+        nameProduct.setText("Doritos");
         amountProduct.setText("1");
-        priceProduct.setText("1500");
-    }//GEN-LAST:event_PEPSIActionPerformed
+        priceProduct.setText("2300");
+    }//GEN-LAST:event_doritosActionPerformed
 
-    private void CIFRUTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CIFRUTActionPerformed
+    private void arrozActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arrozActionPerformed
         // TODO add your handling code here:
         
         idProduct.setText("9512");
-        nameProduct.setText("Cifrut");
+        nameProduct.setText("Porción arroz");
         amountProduct.setText("1");
-        priceProduct.setText("1300");
-    }//GEN-LAST:event_CIFRUTActionPerformed
+        priceProduct.setText("5000");
+    }//GEN-LAST:event_arrozActionPerformed
 
-    private void WATHERActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WATHERActionPerformed
+    private void detoditoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_detoditoActionPerformed
         // TODO add your handling code here:
         
-        idProduct.setText("1232");
-        nameProduct.setText("Water");
+        idProduct.setText("1234");
+        nameProduct.setText("Detodito");
         amountProduct.setText("1");
-        priceProduct.setText("1000");
-    }//GEN-LAST:event_WATHERActionPerformed
+        priceProduct.setText("2000");
+    }//GEN-LAST:event_detoditoActionPerformed
 
-    private void JUICESActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JUICESActionPerformed
+    private void papasFritasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_papasFritasActionPerformed
         // TODO add your handling code here:
         
-        idProduct.setText("1623");
-        nameProduct.setText("Juices");
+        idProduct.setText("1451");
+        nameProduct.setText("Papas fritas");
         amountProduct.setText("1");
-        priceProduct.setText("1300");
-    }//GEN-LAST:event_JUICESActionPerformed
-
-    private void YOGURTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_YOGURTActionPerformed
-        // TODO add your handling code here:
-        
-        idProduct.setText("4745");
-        nameProduct.setText("Yogurt");
-        amountProduct.setText("1");
-        priceProduct.setText("1800");
-    }//GEN-LAST:event_YOGURTActionPerformed
+        priceProduct.setText("4000");
+    }//GEN-LAST:event_papasFritasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -674,41 +653,38 @@ public class Drinks extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Drinks.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Food.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Drinks.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Food.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Drinks.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Food.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Drinks.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Food.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Drinks().setVisible(true);
+                new Food().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Back2;
-    private javax.swing.JButton CIFRUT;
-    private javax.swing.JButton COCACOLA;
-    private javax.swing.JButton Fanta;
-    private javax.swing.JButton JUICES;
-    private javax.swing.JButton KolaRoman;
-    private javax.swing.JButton PEPSI;
-    private javax.swing.JButton PonyMalta;
-    private javax.swing.JButton SPRITE;
     private javax.swing.JButton UPDATE;
-    private javax.swing.JButton WATHER;
-    private javax.swing.JButton YOGURT;
     public javax.swing.JTextField amountProduct;
+    private javax.swing.JButton arroz;
+    private javax.swing.JButton arrozConHuevo;
+    private javax.swing.JButton bandeja;
     public javax.swing.JButton btnconfirm;
     public javax.swing.JButton cancelPRO;
+    private javax.swing.JButton detodito;
+    private javax.swing.JButton doritos;
     private javax.swing.JPanel drinks;
+    private javax.swing.JButton golpeC;
     public javax.swing.JTextField idProduct;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -722,7 +698,10 @@ public class Drinks extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane2;
     public javax.swing.JTextField nameProduct;
+    private javax.swing.JButton onlySopa;
+    private javax.swing.JButton papasFritas;
     public javax.swing.JTextField priceProduct;
+    private javax.swing.JButton sopa;
     public javax.swing.JTable tableproducts;
     // End of variables declaration//GEN-END:variables
 }
