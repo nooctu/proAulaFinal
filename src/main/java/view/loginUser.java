@@ -20,6 +20,7 @@ public class loginUser extends javax.swing.JFrame {
      */
     public loginUser() {
         initComponents();
+         this.setLocationRelativeTo(null);
     }
     public String selected = "";
 

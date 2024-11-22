@@ -19,6 +19,7 @@ public class clientDash extends javax.swing.JFrame {
      */
     public clientDash() {
         initComponents();
+         this.setLocationRelativeTo(null);
     }
 
     /**
