@@ -55,7 +55,6 @@ public class workerDash extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(204, 204, 255));
 
         jLabel1.setFont(new java.awt.Font("JetBrains Mono", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("WORKER ZONE");
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -72,10 +71,9 @@ public class workerDash extends javax.swing.JFrame {
         );
 
         jLabel2.setFont(new java.awt.Font("JetBrains Mono", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("ENTER ORDER'S ID");
 
-        EnterButton.setBackground(new java.awt.Color(102, 102, 102));
+        EnterButton.setBackground(new java.awt.Color(153, 153, 255));
         EnterButton.setFont(new java.awt.Font("JetBrains Mono", 0, 14)); // NOI18N
         EnterButton.setForeground(new java.awt.Color(255, 255, 255));
         EnterButton.setText("ENTER");
@@ -99,15 +97,12 @@ public class workerDash extends javax.swing.JFrame {
         );
 
         jLabel5.setFont(new java.awt.Font("JetBrains Mono", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("NAME PRODUCT");
 
         jLabel6.setFont(new java.awt.Font("JetBrains Mono", 0, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("AMOUNT");
 
         jLabel7.setFont(new java.awt.Font("JetBrains Mono", 0, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("PAY TOTAL");
 
         txtnamepro.setEditable(false);
@@ -116,7 +111,7 @@ public class workerDash extends javax.swing.JFrame {
 
         txtpaytotal.setEditable(false);
 
-        DispatchButton.setBackground(new java.awt.Color(102, 102, 102));
+        DispatchButton.setBackground(new java.awt.Color(153, 153, 255));
         DispatchButton.setFont(new java.awt.Font("JetBrains Mono", 0, 14)); // NOI18N
         DispatchButton.setForeground(new java.awt.Color(255, 255, 255));
         DispatchButton.setText("DISPATCH");
@@ -126,7 +121,7 @@ public class workerDash extends javax.swing.JFrame {
             }
         });
 
-        BACKBUTTON.setBackground(new java.awt.Color(102, 102, 102));
+        BACKBUTTON.setBackground(new java.awt.Color(153, 153, 255));
         BACKBUTTON.setFont(new java.awt.Font("JetBrains Mono", 0, 14)); // NOI18N
         BACKBUTTON.setForeground(new java.awt.Color(255, 255, 255));
         BACKBUTTON.setText("BACK TO LOGIN");
