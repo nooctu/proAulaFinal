@@ -30,12 +30,12 @@ public class BuyProduct extends javax.swing.JFrame {
 
         buyProduct = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         Back = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         Drinks = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        FOOD = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -43,12 +43,6 @@ public class BuyProduct extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
         jButton1.setText("SWEETS");
-
-        jButton2.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
-        jButton2.setText("LUNCHES");
-
-        jButton4.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
-        jButton4.setText("FRIEDS");
 
         Back.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
         Back.setText("BACK");
@@ -58,7 +52,7 @@ public class BuyProduct extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("JetBrains Mono", 0, 10)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
         jLabel1.setText("CHOOSE A OPTION FOR START A LIST OR CONTINUE");
 
         Drinks.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
@@ -69,13 +63,19 @@ public class BuyProduct extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
-        jButton3.setText("SNACKS");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        FOOD.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        FOOD.setText("FOOD");
+        FOOD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                FOODActionPerformed(evt);
             }
         });
+
+        jLabel2.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        jLabel2.setText("DEAR CLIENT THE PAYMET ONLY BE  MADE FOR");
+
+        jLabel3.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        jLabel3.setText("PYSHICALLY");
 
         javax.swing.GroupLayout buyProductLayout = new javax.swing.GroupLayout(buyProduct);
         buyProduct.setLayout(buyProductLayout);
@@ -87,17 +87,22 @@ public class BuyProduct extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jLabel1))
                     .addGroup(buyProductLayout.createSequentialGroup()
-                        .addGap(23, 23, 23)
+                        .addGap(18, 18, 18)
+                        .addComponent(Back))
+                    .addGroup(buyProductLayout.createSequentialGroup()
+                        .addGap(31, 31, 31)
                         .addGroup(buyProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Drinks, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Drinks, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
                             .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
-                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(FOOD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(buyProductLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(Back)))
-                .addContainerGap(10, Short.MAX_VALUE))
+                        .addGroup(buyProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(buyProductLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel3))
+                            .addComponent(jLabel2))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         buyProductLayout.setVerticalGroup(
             buyProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -107,16 +112,16 @@ public class BuyProduct extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addComponent(Drinks)
-                .addGap(37, 37, 37)
-                .addComponent(jButton3)
-                .addGap(37, 37, 37)
-                .addComponent(jButton1)
-                .addGap(37, 37, 37)
-                .addComponent(jButton2)
-                .addGap(37, 37, 37)
-                .addComponent(jButton4)
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addComponent(Drinks, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(FOOD, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3)
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -141,9 +146,9 @@ public class BuyProduct extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_BackActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void FOODActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FOODActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_FOODActionPerformed
 
     private void DrinksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DrinksActionPerformed
         // TODO add your handling code here:
@@ -194,11 +199,11 @@ public class BuyProduct extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Back;
     private javax.swing.JButton Drinks;
+    private javax.swing.JButton FOOD;
     private javax.swing.JPanel buyProduct;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }

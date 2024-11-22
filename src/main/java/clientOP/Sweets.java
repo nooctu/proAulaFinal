@@ -4,6 +4,15 @@
  */
 package clientOP;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+import model.db_ordersConnection;
+import model.db_productConnection;
+import model.productSearch;
+
 /**
  *
  * @author kenie
@@ -28,37 +37,362 @@ public class Sweets extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
+        COCACOLA = new javax.swing.JButton();
+        PEPSI = new javax.swing.JButton();
+        PonyMalta = new javax.swing.JButton();
+        WATHER = new javax.swing.JButton();
+        SPRITE = new javax.swing.JButton();
+        KolaRoman = new javax.swing.JButton();
+        Fanta = new javax.swing.JButton();
+        CIFRUT = new javax.swing.JButton();
+        JUICES = new javax.swing.JButton();
+        YOGURT = new javax.swing.JButton();
+        tablaconfi = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tableproducts = new javax.swing.JTable();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        nameProduct = new javax.swing.JTextField();
+        amountProduct = new javax.swing.JTextField();
+        priceProduct = new javax.swing.JTextField();
+        idProduct = new javax.swing.JTextField();
+        btnconfirm = new javax.swing.JButton();
+        cancelPRO = new javax.swing.JButton();
+        UPDATE = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
+        COCACOLA.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        COCACOLA.setText("COMBO OF CANDYS / 500");
+        COCACOLA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                COCACOLAActionPerformed(evt);
+            }
+        });
+
+        PEPSI.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        PEPSI.setText("ICE CREAM OF BLUEBERRY / 1300");
+        PEPSI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PEPSIActionPerformed(evt);
+            }
+        });
+
+        PonyMalta.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        PonyMalta.setText("ICE CREAM CHOCOLATE/ 1000");
+        PonyMalta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PonyMaltaActionPerformed(evt);
+            }
+        });
+
+        WATHER.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        WATHER.setText("DOUBLE BALL OF ICE CREAM / 2000");
+        WATHER.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WATHERActionPerformed(evt);
+            }
+        });
+
+        SPRITE.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        SPRITE.setText("D.B OF ICE CREAM WITH COOKIES / 2300");
+        SPRITE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SPRITEActionPerformed(evt);
+            }
+        });
+
+        KolaRoman.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        KolaRoman.setText("COOOKIS AND CHERRYS / 1400");
+        KolaRoman.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                KolaRomanActionPerformed(evt);
+            }
+        });
+
+        Fanta.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        Fanta.setText("COOKIES WITH AREQUIPE / 1200");
+        Fanta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FantaActionPerformed(evt);
+            }
+        });
+
+        CIFRUT.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        CIFRUT.setText("AREQUIPE / 650");
+        CIFRUT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CIFRUTActionPerformed(evt);
+            }
+        });
+
+        JUICES.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        JUICES.setText("TRIPLE CONE OF ICE CREAM / 3000");
+        JUICES.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JUICESActionPerformed(evt);
+            }
+        });
+
+        YOGURT.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        YOGURT.setText("EXPLOSION OF CREAM / 3500");
+        YOGURT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                YOGURTActionPerformed(evt);
+            }
+        });
+
+        tablaconfi.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel2.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        jLabel2.setText("Do your list, can you choose more than 1.");
+
+        tableproducts.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        tableproducts.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "ID", "NAME", "AMOUNT", "PRICE"
+            }
+        ));
+        jScrollPane2.setViewportView(tableproducts);
+
+        javax.swing.GroupLayout tablaconfiLayout = new javax.swing.GroupLayout(tablaconfi);
+        tablaconfi.setLayout(tablaconfiLayout);
+        tablaconfiLayout.setHorizontalGroup(
+            tablaconfiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tablaconfiLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(157, 157, 157))
+            .addGroup(tablaconfiLayout.createSequentialGroup()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        tablaconfiLayout.setVerticalGroup(
+            tablaconfiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tablaconfiLayout.createSequentialGroup()
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 472, Short.MAX_VALUE))
+        );
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+
+        nameProduct.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        nameProduct.setText(" ");
+
+        amountProduct.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        amountProduct.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                amountProductActionPerformed(evt);
+            }
+        });
+
+        priceProduct.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+
+        idProduct.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        idProduct.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                idProductActionPerformed(evt);
+            }
+        });
+
+        btnconfirm.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        btnconfirm.setText("CONFIRM");
+        btnconfirm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnconfirmActionPerformed(evt);
+            }
+        });
+
+        cancelPRO.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        cancelPRO.setText("CANCEL");
+
+        UPDATE.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        UPDATE.setText("UPDATE");
+        UPDATE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UPDATEActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setFont(new java.awt.Font("JetBrains Mono", 0, 14)); // NOI18N
+        jLabel4.setText("ID:");
+
+        jLabel5.setFont(new java.awt.Font("JetBrains Mono", 0, 14)); // NOI18N
+        jLabel5.setText("NAME:");
+
+        jLabel6.setFont(new java.awt.Font("JetBrains Mono", 0, 14)); // NOI18N
+        jLabel6.setText("AMOUNT:");
+
+        jLabel7.setFont(new java.awt.Font("JetBrains Mono", 0, 14)); // NOI18N
+        jLabel7.setText("PRICE:");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(268, 268, 268)
+                .addComponent(jLabel3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(3, 3, 3))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(42, 42, 42))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(btnconfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32)
+                        .addComponent(UPDATE)
+                        .addGap(30, 30, 30)
+                        .addComponent(cancelPRO))
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(priceProduct, javax.swing.GroupLayout.DEFAULT_SIZE, 443, Short.MAX_VALUE)
+                        .addComponent(idProduct)
+                        .addComponent(amountProduct)
+                        .addComponent(nameProduct)))
+                .addContainerGap())
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(idProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nameProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel6)
+                    .addComponent(amountProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(priceProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnconfirm)
+                    .addComponent(cancelPRO)
+                    .addComponent(UPDATE))
+                .addGap(21, 21, 21))
+        );
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 766, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(WATHER, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(SPRITE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(COCACOLA, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(PEPSI, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(PonyMalta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Fanta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(KolaRoman, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(CIFRUT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(YOGURT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(JUICES)
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tablaconfi, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(81, 81, 81))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 403, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(19, 19, 19)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(KolaRoman, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PonyMalta))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Fanta)
+                    .addComponent(COCACOLA))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(PEPSI)
+                    .addComponent(CIFRUT))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(WATHER)
+                    .addComponent(JUICES))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(YOGURT)
+                    .addComponent(SPRITE))
+                .addGap(58, 58, 58))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(tablaconfi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
         );
+
+        jLabel1.setFont(new java.awt.Font("JetBrains Mono", 0, 24)); // NOI18N
+        jLabel1.setText("CHOSE ONE OR MORE SWEETS DELICIOUS! ");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 980, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addGap(6, 6, 6)
+                .addComponent(jLabel1)
+                .addGap(1, 1, 1)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -74,6 +408,231 @@ public class Sweets extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void COCACOLAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_COCACOLAActionPerformed
+        // TODO add your handling code here:
+        idProduct.setText("2455");
+        nameProduct.setText("ICE CREAM OF CHOCOLATE");
+        amountProduct.setText("1");
+        priceProduct.setText("1000");
+    }//GEN-LAST:event_COCACOLAActionPerformed
+
+    private void PEPSIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PEPSIActionPerformed
+        // TODO add your handling code here:
+
+        idProduct.setText("4352");
+        nameProduct.setText("COMBO OF CANDYS");
+        amountProduct.setText("1");
+        priceProduct.setText("500");
+    }//GEN-LAST:event_PEPSIActionPerformed
+
+    private void PonyMaltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PonyMaltaActionPerformed
+        // TODO add your handling code here:
+
+        idProduct.setText("3453");
+        nameProduct.setText("ICE CREAM OF BLUEBERRRY");
+        amountProduct.setText("1");
+        priceProduct.setText("1300");
+    }//GEN-LAST:event_PonyMaltaActionPerformed
+
+    private void WATHERActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WATHERActionPerformed
+        // TODO add your handling code here:
+
+        idProduct.setText("2523");
+        nameProduct.setText("DOUBLE OF ICE CREAM");
+        amountProduct.setText("1");
+        priceProduct.setText("2000");
+    }//GEN-LAST:event_WATHERActionPerformed
+
+    private void SPRITEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SPRITEActionPerformed
+        // TODO add your handling code here:
+
+        idProduct.setText("6432");
+        nameProduct.setText("D.B OF ICE CREAM WITH COOKIES");
+        amountProduct.setText("1");
+        priceProduct.setText("2300");
+    }//GEN-LAST:event_SPRITEActionPerformed
+
+    private void KolaRomanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KolaRomanActionPerformed
+        // TODO add your handling code here:
+
+        idProduct.setText("5728");
+        nameProduct.setText("COOKIES AND CHERRYS");
+        amountProduct.setText("1");
+        priceProduct.setText("1400");
+    }//GEN-LAST:event_KolaRomanActionPerformed
+
+    private void FantaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FantaActionPerformed
+        // TODO add your handling code here:
+
+        idProduct.setText("3893");
+        nameProduct.setText("COOKIES WITH AREQUIPE");
+        amountProduct.setText("1");
+        priceProduct.setText("1200");
+    }//GEN-LAST:event_FantaActionPerformed
+
+    private void CIFRUTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CIFRUTActionPerformed
+        // TODO add your handling code here:
+
+        idProduct.setText("9482");
+        nameProduct.setText("AREQUIPE");
+        amountProduct.setText("1");
+        priceProduct.setText("650");
+    }//GEN-LAST:event_CIFRUTActionPerformed
+
+    private void JUICESActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JUICESActionPerformed
+        // TODO add your handling code here:
+
+        idProduct.setText("4456");
+        nameProduct.setText("TRIPLE CONE OF ICE CREAM ");
+        amountProduct.setText("1");
+        priceProduct.setText("3000");
+    }//GEN-LAST:event_JUICESActionPerformed
+
+    private void YOGURTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_YOGURTActionPerformed
+        // TODO add your handling code here:
+
+        idProduct.setText("5323");
+        nameProduct.setText("EXPLOSION OF ICE CREAM");
+        amountProduct.setText("1");
+        priceProduct.setText("3500");
+    }//GEN-LAST:event_YOGURTActionPerformed
+
+    private void amountProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_amountProductActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_amountProductActionPerformed
+
+    private void idProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idProductActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_idProductActionPerformed
+
+    private void btnconfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnconfirmActionPerformed
+        // TODO add your handling code here:
+
+        String idToRow = idProduct.getText();
+        String nameToRow = nameProduct.getText();
+        String amountToRow = amountProduct.getText();
+        String priceToRow = priceProduct.getText();
+
+        productSearch ps = new productSearch();
+        boolean busquedaExitosa = ps.findProduct(nameToRow, priceToRow);
+
+        if (busquedaExitosa) {
+
+            int rowsDispo = tableproducts.getRowCount();
+            int z = -1;
+
+            for (int i = 0; i < rowsDispo; i++) {
+                if(tableproducts.getValueAt(i, 0) == null){
+                    z = i;
+                    break;
+                }
+            }
+
+            tableproducts.setValueAt(idToRow, z, 0);
+
+            for (int x = 1; x < 4; x++) {
+
+                tableproducts.setValueAt(nameToRow, z, x);
+            }
+
+            for (int g = 2; g < 4; g++) {
+
+                tableproducts.setValueAt(amountToRow, z, g);
+            }
+
+            for (int f = 3; f < 4; f++) {
+                tableproducts.setValueAt(priceToRow, z, f);
+
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Inexistent product");
+        }
+
+        String collect = amountProduct.getText().trim();
+        String collectName = nameProduct.getText().trim();
+        int substract = Integer.parseInt(collect);
+
+        db_productConnection db = new db_productConnection();
+
+        try {
+            Connection cn = db.conectar();
+
+            String consult = "SELECT cantidadproducto, nombreproducto FROM productsp WHERE nombreproducto = ?";
+            PreparedStatement pstConsulta = cn.prepareStatement(consult);
+            pstConsulta.setString(1, collectName);
+            ResultSet rs = pstConsulta.executeQuery();
+
+            if (rs.next()) {
+                int stockActual = rs.getInt("cantidadproducto");
+                if (stockActual > substract) {
+                    // Realizar la resta
+                    String sql = "UPDATE productsp SET cantidadproducto = cantidadproducto - ? WHERE nombreproducto = ?";
+                    PreparedStatement pst = cn.prepareStatement(sql);
+                    pst.setInt(1, substract);
+                    pst.setString(2, collectName);
+
+                    int filasAfectadas = pst.executeUpdate();
+                    if (filasAfectadas > 0) {
+                        JOptionPane.showMessageDialog(null, "Amount substracted successfully. Thanks for buying with us");
+                    } else {
+                        JOptionPane.showMessageDialog(null, "An error ocurred.");
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "This product doesn't have enough stock to sell it.");
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Inexistent Product.");
+            }
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error: " + e);
+        }
+
+        String getPrice = priceProduct.getText();
+        int priceToOrder = Integer.parseInt(getPrice);
+
+        String getAmount = amountProduct.getText();
+        int amountToOrder = Integer.parseInt(getAmount);
+
+        db_ordersConnection db2 = new db_ordersConnection();
+        Connection cn = db2.conectar();
+
+        if (cn != null) {
+            try {
+
+                String sql = "INSERT INTO orders (nameproducts, amount, totalpay, idOrder) VALUES (?, ?, ?, ?)";
+                PreparedStatement pst = cn.prepareStatement(sql);
+
+                // Establecer los valores en la consulta
+                pst.setString(1, nameToRow);
+                pst.setString(2, amountToRow);
+                pst.setInt(3, priceToOrder * amountToOrder);
+                pst.setString(4, idToRow);
+
+                // Ejecutar la consulta
+
+                int rowsInserted = pst.executeUpdate();
+                if (rowsInserted > 0) {
+                    JOptionPane.showMessageDialog(null, "Succesful Registration!");
+                }
+
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Error to register data: " + e);
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Error de conexión a la base de datos");
+        }
+    }//GEN-LAST:event_btnconfirmActionPerformed
+
+    private void UPDATEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UPDATEActionPerformed
+        // TODO add your handling code here:
+        idProduct.setText("");
+        nameProduct.setText("");
+        amountProduct.setText("");
+        priceProduct.setText("");
+    }//GEN-LAST:event_UPDATEActionPerformed
 
     /**
      * @param args the command line arguments
@@ -111,7 +670,35 @@ public class Sweets extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton CIFRUT;
+    private javax.swing.JButton COCACOLA;
+    private javax.swing.JButton Fanta;
+    private javax.swing.JButton JUICES;
+    private javax.swing.JButton KolaRoman;
+    private javax.swing.JButton PEPSI;
+    private javax.swing.JButton PonyMalta;
+    private javax.swing.JButton SPRITE;
+    private javax.swing.JButton UPDATE;
+    private javax.swing.JButton WATHER;
+    private javax.swing.JButton YOGURT;
+    public javax.swing.JTextField amountProduct;
+    public javax.swing.JButton btnconfirm;
+    public javax.swing.JButton cancelPRO;
+    public javax.swing.JTextField idProduct;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane2;
+    public javax.swing.JTextField nameProduct;
+    public javax.swing.JTextField priceProduct;
+    public javax.swing.JPanel tablaconfi;
+    public javax.swing.JTable tableproducts;
     // End of variables declaration//GEN-END:variables
 }
