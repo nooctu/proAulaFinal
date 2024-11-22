@@ -35,9 +35,6 @@ public class clientDash extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         BuyProduct1 = new javax.swing.JButton();
-        ViewProduct1 = new javax.swing.JButton();
-        UpdateList1 = new javax.swing.JButton();
-        CanceList1 = new javax.swing.JButton();
         backLogin1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -73,15 +70,6 @@ public class clientDash extends javax.swing.JFrame {
             }
         });
 
-        ViewProduct1.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
-        ViewProduct1.setText("2. VIEW PROCUT");
-
-        UpdateList1.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
-        UpdateList1.setText("3. UPDATE YOUR LIST");
-
-        CanceList1.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
-        CanceList1.setText("4. CANCEL YOUR LIST");
-
         backLogin1.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
         backLogin1.setText("BACK TO LOGINS");
         backLogin1.addActionListener(new java.awt.event.ActionListener() {
@@ -97,39 +85,25 @@ public class clientDash extends javax.swing.JFrame {
             .addGroup(clientDashLayout.createSequentialGroup()
                 .addGroup(clientDashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(clientDashLayout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addGroup(clientDashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(clientDashLayout.createSequentialGroup()
-                                .addGap(16, 16, 16)
-                                .addGroup(clientDashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(UpdateList1)
-                                    .addComponent(BuyProduct1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(111, 111, 111)
-                                .addGroup(clientDashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(ViewProduct1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(CanceList1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(backLogin1)))
+                        .addGap(144, 144, 144)
+                        .addComponent(BuyProduct1, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(clientDashLayout.createSequentialGroup()
                         .addGap(50, 50, 50)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(42, Short.MAX_VALUE))
+                        .addGroup(clientDashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(backLogin1)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         clientDashLayout.setVerticalGroup(
             clientDashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(clientDashLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(clientDashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BuyProduct1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ViewProduct1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(61, 61, 61)
-                .addGroup(clientDashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(UpdateList1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CanceList1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
+                .addGap(60, 60, 60)
+                .addComponent(BuyProduct1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(71, 71, 71)
                 .addComponent(backLogin1)
-                .addGap(25, 25, 25))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -200,9 +174,6 @@ public class clientDash extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BuyProduct1;
-    private javax.swing.JButton CanceList1;
-    private javax.swing.JButton UpdateList1;
-    private javax.swing.JButton ViewProduct1;
     private javax.swing.JButton backLogin1;
     private javax.swing.JPanel clientDash;
     private javax.swing.JLabel jLabel2;

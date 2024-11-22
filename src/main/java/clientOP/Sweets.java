@@ -60,13 +60,13 @@ public class Sweets extends javax.swing.JFrame {
         priceProduct = new javax.swing.JTextField();
         idProduct = new javax.swing.JTextField();
         btnconfirm = new javax.swing.JButton();
-        cancelPRO = new javax.swing.JButton();
         UPDATE = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -220,9 +220,6 @@ public class Sweets extends javax.swing.JFrame {
             }
         });
 
-        cancelPRO.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
-        cancelPRO.setText("CANCEL");
-
         UPDATE.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
         UPDATE.setText("UPDATE");
         UPDATE.addActionListener(new java.awt.event.ActionListener() {
@@ -271,9 +268,7 @@ public class Sweets extends javax.swing.JFrame {
                         .addGap(37, 37, 37)
                         .addComponent(btnconfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(32, 32, 32)
-                        .addComponent(UPDATE)
-                        .addGap(30, 30, 30)
-                        .addComponent(cancelPRO))
+                        .addComponent(UPDATE))
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(priceProduct, javax.swing.GroupLayout.DEFAULT_SIZE, 443, Short.MAX_VALUE)
                         .addComponent(idProduct)
@@ -305,7 +300,6 @@ public class Sweets extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnconfirm)
-                    .addComponent(cancelPRO)
                     .addComponent(UPDATE))
                 .addGap(21, 21, 21))
         );
@@ -373,25 +367,35 @@ public class Sweets extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("JetBrains Mono", 0, 24)); // NOI18N
         jLabel1.setText("CHOSE ONE OR MORE SWEETS DELICIOUS! ");
 
+        jButton2.setFont(new java.awt.Font("JetBrains Mono", 0, 14)); // NOI18N
+        jButton2.setText("BACK");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(30, 30, 30)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 980, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(50, Short.MAX_VALUE))
+                        .addComponent(jLabel1)
+                        .addGap(385, 385, 385)
+                        .addComponent(jButton2))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 980, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(6, 6, 6)
-                .addComponent(jLabel1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jButton2))
                 .addGap(1, 1, 1)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(40, Short.MAX_VALUE))
@@ -636,6 +640,13 @@ public class Sweets extends javax.swing.JFrame {
         priceProduct.setText("");
     }//GEN-LAST:event_UPDATEActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+          BuyProduct access = new BuyProduct();
+        access.setVisible(true);
+
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -676,7 +687,6 @@ public class Sweets extends javax.swing.JFrame {
     public javax.swing.JTextField amountProduct;
     private javax.swing.JButton arequipe;
     public javax.swing.JButton btnconfirm;
-    public javax.swing.JButton cancelPRO;
     private javax.swing.JButton candys;
     private javax.swing.JButton cookiesAndCherrys;
     private javax.swing.JButton cookiesDb;
@@ -687,6 +697,7 @@ public class Sweets extends javax.swing.JFrame {
     private javax.swing.JButton iceCreamExplosion;
     private javax.swing.JButton iceCreamTripleCone;
     public javax.swing.JTextField idProduct;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

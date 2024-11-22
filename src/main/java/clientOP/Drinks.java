@@ -69,7 +69,6 @@ public class Drinks extends javax.swing.JFrame {
         priceProduct = new javax.swing.JTextField();
         idProduct = new javax.swing.JTextField();
         btnconfirm = new javax.swing.JButton();
-        cancelPRO = new javax.swing.JButton();
         UPDATE = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -234,9 +233,6 @@ public class Drinks extends javax.swing.JFrame {
             }
         });
 
-        cancelPRO.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
-        cancelPRO.setText("CANCEL");
-
         UPDATE.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
         UPDATE.setText("UPDATE");
         UPDATE.addActionListener(new java.awt.event.ActionListener() {
@@ -273,8 +269,7 @@ public class Drinks extends javax.swing.JFrame {
                         .addComponent(btnconfirm)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(UPDATE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cancelPRO))
+                        .addGap(91, 91, 91))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -293,8 +288,7 @@ public class Drinks extends javax.swing.JFrame {
                                 .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(priceProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(12, 12, 12)))
-                .addContainerGap())
+                        .addGap(18, 18, 18))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -320,7 +314,6 @@ public class Drinks extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnconfirm)
-                    .addComponent(cancelPRO)
                     .addComponent(UPDATE))
                 .addGap(21, 21, 21))
         );
@@ -719,7 +712,6 @@ public class Drinks extends javax.swing.JFrame {
     private javax.swing.JButton YOGURT;
     public javax.swing.JTextField amountProduct;
     public javax.swing.JButton btnconfirm;
-    public javax.swing.JButton cancelPRO;
     private javax.swing.JPanel drinks;
     public javax.swing.JTextField idProduct;
     private javax.swing.JLabel jLabel1;
