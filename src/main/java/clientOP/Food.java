@@ -9,8 +9,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import model.db_ordersConnection;
-import model.productSearch;
 import model.db_productConnectionfood;
+import model.foodSearch;
 
 
 
@@ -451,7 +451,7 @@ public class Food extends javax.swing.JFrame {
         String amountToRow = amountProduct.getText();
         String priceToRow = priceProduct.getText();
                 
-        productSearch ps = new productSearch();
+        foodSearch ps = new foodSearch();
         boolean busquedaExitosa = ps.findProduct(nameToRow, priceToRow);
         
         if (busquedaExitosa) {
