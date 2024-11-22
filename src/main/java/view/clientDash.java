@@ -41,6 +41,8 @@ public class clientDash extends javax.swing.JFrame {
 
         clientDash.setBackground(new java.awt.Color(204, 204, 255));
 
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+
         jLabel2.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(153, 0, 153));
         jLabel2.setText("WELCOM DEAR CLIENT, YOU CAN CHOOSE YOUR KIND OF MENU ");

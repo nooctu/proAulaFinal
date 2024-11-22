@@ -75,6 +75,8 @@ public class Food extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("JetBrains Mono", 0, 18)); // NOI18N
         jLabel1.setText("CHOOSE ONE OR MORE FOODS!");
 
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
         sopa.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
         sopa.setText("SOPA Y SECO / 10000");
         sopa.addActionListener(new java.awt.event.ActionListener() {
@@ -147,8 +149,9 @@ public class Food extends javax.swing.JFrame {
             }
         });
 
-        tablaconfi.setBackground(new java.awt.Color(204, 204, 204));
+        tablaconfi.setBackground(new java.awt.Color(153, 153, 255));
 
+        jLabel2.setBackground(new java.awt.Color(153, 153, 255));
         jLabel2.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
         jLabel2.setText("Do your list, can you choose more than 1.");
 
@@ -177,13 +180,10 @@ public class Food extends javax.swing.JFrame {
         tablaconfiLayout.setHorizontalGroup(
             tablaconfiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tablaconfiLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(12, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(157, 157, 157))
-            .addGroup(tablaconfiLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         tablaconfiLayout.setVerticalGroup(
             tablaconfiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

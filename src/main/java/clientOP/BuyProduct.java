@@ -19,6 +19,7 @@ public class BuyProduct extends javax.swing.JFrame {
      */
     public BuyProduct() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

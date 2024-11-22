@@ -26,6 +26,7 @@ public class Sweets extends javax.swing.JFrame {
      */
     public Sweets() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -71,6 +72,8 @@ public class Sweets extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
         candys.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
         candys.setText("COMBO OF CANDYS / 500");
@@ -152,7 +155,7 @@ public class Sweets extends javax.swing.JFrame {
             }
         });
 
-        tablaconfi.setBackground(new java.awt.Color(204, 204, 204));
+        tablaconfi.setBackground(new java.awt.Color(153, 153, 255));
 
         jLabel2.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
         jLabel2.setText("Do your list, can you choose more than 1.");
@@ -180,7 +183,7 @@ public class Sweets extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGap(157, 157, 157))
             .addGroup(tablaconfiLayout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         tablaconfiLayout.setVerticalGroup(
@@ -365,7 +368,7 @@ public class Sweets extends javax.swing.JFrame {
         );
 
         jLabel1.setFont(new java.awt.Font("JetBrains Mono", 0, 24)); // NOI18N
-        jLabel1.setText("CHOSE ONE OR MORE SWEETS DELICIOUS! ");
+        jLabel1.setText("CHOOSE ONE OR MORE SWEETS DELICIOUS! ");
 
         jButton2.setFont(new java.awt.Font("JetBrains Mono", 0, 14)); // NOI18N
         jButton2.setText("BACK");
@@ -380,25 +383,25 @@ public class Sweets extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(40, 40, 40)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addGap(385, 385, 385)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton2))
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 980, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(6, 6, 6)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jButton2))
-                .addGap(1, 1, 1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2)
+                    .addComponent(jLabel1))
+                .addGap(7, 7, 7)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

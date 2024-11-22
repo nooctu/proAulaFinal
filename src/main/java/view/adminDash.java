@@ -35,36 +35,38 @@ public class adminDash extends javax.swing.JFrame {
     private void initComponents() {
 
         Background = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        Agregar_producto = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        backLogin1 = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
         Agregar_trabajo = new javax.swing.JButton();
+        Agregar_producto = new javax.swing.JButton();
         Despedir_trabajador = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        backLogin1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("JetBrains Mono", 1, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(153, 0, 153));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("WELCOME ADMIN");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, -1, -1));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Agregar_producto.setBackground(new java.awt.Color(102, 0, 102));
-        Agregar_producto.setFont(new java.awt.Font("JetBrains Mono", 1, 18)); // NOI18N
-        Agregar_producto.setForeground(new java.awt.Color(255, 255, 255));
-        Agregar_producto.setText("ADD PRODUCT");
-        Agregar_producto.addActionListener(new java.awt.event.ActionListener() {
+        backLogin1.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        backLogin1.setText("BACK TO LOGINS");
+        backLogin1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Agregar_productoActionPerformed(evt);
+                backLogin1ActionPerformed(evt);
             }
         });
+        jPanel2.add(backLogin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 360, -1, -1));
 
-        Agregar_trabajo.setBackground(new java.awt.Color(102, 0, 102));
+        jPanel4.setBackground(new java.awt.Color(204, 204, 255));
+
+        Agregar_trabajo.setBackground(new java.awt.Color(153, 153, 255));
         Agregar_trabajo.setFont(new java.awt.Font("JetBrains Mono", 1, 18)); // NOI18N
         Agregar_trabajo.setForeground(new java.awt.Color(255, 255, 255));
         Agregar_trabajo.setText("ADD WORKER");
@@ -74,7 +76,17 @@ public class adminDash extends javax.swing.JFrame {
             }
         });
 
-        Despedir_trabajador.setBackground(new java.awt.Color(102, 0, 102));
+        Agregar_producto.setBackground(new java.awt.Color(153, 153, 255));
+        Agregar_producto.setFont(new java.awt.Font("JetBrains Mono", 1, 18)); // NOI18N
+        Agregar_producto.setForeground(new java.awt.Color(255, 255, 255));
+        Agregar_producto.setText("ADD PRODUCT");
+        Agregar_producto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Agregar_productoActionPerformed(evt);
+            }
+        });
+
+        Despedir_trabajador.setBackground(new java.awt.Color(153, 153, 255));
         Despedir_trabajador.setFont(new java.awt.Font("JetBrains Mono", 0, 18)); // NOI18N
         Despedir_trabajador.setForeground(new java.awt.Color(255, 255, 255));
         Despedir_trabajador.setText("DELETE WORKER");
@@ -87,57 +99,63 @@ public class adminDash extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("JetBrains Mono", 1, 18)); // NOI18N
         jLabel3.setText("CHOOSE AN OPTION");
 
-        backLogin1.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
-        backLogin1.setText("BACK TO LOGINS");
-        backLogin1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backLogin1ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout BackgroundLayout = new javax.swing.GroupLayout(Background);
-        Background.setLayout(BackgroundLayout);
-        BackgroundLayout.setHorizontalGroup(
-            BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BackgroundLayout.createSequentialGroup()
-                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(BackgroundLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(BackgroundLayout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Agregar_producto)
-                            .addComponent(Despedir_trabajador)
-                            .addComponent(Agregar_trabajo))
-                        .addGap(0, 450, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(BackgroundLayout.createSequentialGroup()
-                .addGap(222, 222, 222)
-                .addComponent(jLabel3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(backLogin1)
-                .addGap(22, 22, 22))
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel3)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel4Layout.createSequentialGroup()
+                            .addGap(20, 20, 20)
+                            .addComponent(Despedir_trabajador))
+                        .addGroup(jPanel4Layout.createSequentialGroup()
+                            .addGap(29, 29, 29)
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(Agregar_trabajo)
+                                .addComponent(Agregar_producto)))))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
-        BackgroundLayout.setVerticalGroup(
-            BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BackgroundLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap(52, Short.MAX_VALUE)
                 .addComponent(jLabel3)
-                .addGap(22, 22, 22)
-                .addComponent(Agregar_producto)
-                .addGap(34, 34, 34)
+                .addGap(26, 26, 26)
                 .addComponent(Agregar_trabajo)
-                .addGap(32, 32, 32)
+                .addGap(39, 39, 39)
+                .addComponent(Agregar_producto)
+                .addGap(41, 41, 41)
                 .addComponent(Despedir_trabajador)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                .addComponent(backLogin1)
-                .addGap(27, 27, 27))
+                .addGap(41, 41, 41))
         );
+
+        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 210, 320));
+
+        jLabel2.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        jLabel2.setText("IN THIS APART YOU CAN MODIFY AND ");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, 250, 40));
+
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("JetBrains Mono", 1, 48)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("WELCOME ADMIN");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, -1, -1));
+
+        jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 656, 160));
+
+        jLabel4.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        jLabel4.setText("ADD WORKER AND ALL THE GESTION WHAT MEAN OF ");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        jLabel5.setText("ALL APART OF PRODUC AND WORKERS.");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 250, -1, -1));
+
+        Background.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -147,7 +165,7 @@ public class adminDash extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Background, javax.swing.GroupLayout.DEFAULT_SIZE, 627, Short.MAX_VALUE)
         );
 
         pack();
@@ -237,7 +255,12 @@ public class adminDash extends javax.swing.JFrame {
     private javax.swing.JButton Despedir_trabajador;
     private javax.swing.JButton backLogin1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel4;
     // End of variables declaration//GEN-END:variables
 }
