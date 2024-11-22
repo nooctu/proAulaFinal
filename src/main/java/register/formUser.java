@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package register;
-import model.db_connection;
+import connections.db_connection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

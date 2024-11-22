@@ -5,7 +5,7 @@
  */
 package adminOp;
 import view.adminDash;
-import model.db_workerConnection;
+import connections.db_workerConnection;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;

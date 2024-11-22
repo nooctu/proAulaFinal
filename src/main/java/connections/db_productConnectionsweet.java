@@ -1,10 +1,10 @@
-package model;
+package connections;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
-public class db_workerConnection {
+public class db_productConnectionsweet {
     
     private static Connection con = null;
     

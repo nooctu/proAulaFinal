@@ -10,9 +10,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import model.db_ordersConnection;
+import connections.db_ordersConnection;
 import model.productSearch;
-import model.db_productConnection;
+import connections.db_productConnection;
 import view.adminDash;
 
 

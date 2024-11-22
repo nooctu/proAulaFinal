@@ -9,9 +9,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
-import model.db_ordersConnection;
-import model.db_productConnection;
+import connections.db_ordersConnection;
+import connections.db_productConnection;
+import connections.db_productConnectionsweet;
 import model.productSearch;
+import model.sweetSearch;
 
 /**
  *
@@ -37,16 +39,16 @@ public class Sweets extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        COCACOLA = new javax.swing.JButton();
-        PEPSI = new javax.swing.JButton();
-        PonyMalta = new javax.swing.JButton();
-        WATHER = new javax.swing.JButton();
-        SPRITE = new javax.swing.JButton();
-        KolaRoman = new javax.swing.JButton();
-        Fanta = new javax.swing.JButton();
-        CIFRUT = new javax.swing.JButton();
-        JUICES = new javax.swing.JButton();
-        YOGURT = new javax.swing.JButton();
+        candys = new javax.swing.JButton();
+        iceCreamBlueberry = new javax.swing.JButton();
+        iceCream = new javax.swing.JButton();
+        iceCreamDB = new javax.swing.JButton();
+        cookiesDb = new javax.swing.JButton();
+        cookiesAndCherrys = new javax.swing.JButton();
+        cookiesWithArequipe = new javax.swing.JButton();
+        arequipe = new javax.swing.JButton();
+        iceCreamTripleCone = new javax.swing.JButton();
+        iceCreamExplosion = new javax.swing.JButton();
         tablaconfi = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -70,83 +72,83 @@ public class Sweets extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
-        COCACOLA.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
-        COCACOLA.setText("COMBO OF CANDYS / 500");
-        COCACOLA.addActionListener(new java.awt.event.ActionListener() {
+        candys.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        candys.setText("COMBO OF CANDYS / 500");
+        candys.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                COCACOLAActionPerformed(evt);
+                candysActionPerformed(evt);
             }
         });
 
-        PEPSI.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
-        PEPSI.setText("ICE CREAM OF BLUEBERRY / 1300");
-        PEPSI.addActionListener(new java.awt.event.ActionListener() {
+        iceCreamBlueberry.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        iceCreamBlueberry.setText("ICE CREAM OF BLUEBERRY / 1300");
+        iceCreamBlueberry.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PEPSIActionPerformed(evt);
+                iceCreamBlueberryActionPerformed(evt);
             }
         });
 
-        PonyMalta.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
-        PonyMalta.setText("ICE CREAM CHOCOLATE/ 1000");
-        PonyMalta.addActionListener(new java.awt.event.ActionListener() {
+        iceCream.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        iceCream.setText("ICE CREAM CHOCOLATE/ 1000");
+        iceCream.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PonyMaltaActionPerformed(evt);
+                iceCreamActionPerformed(evt);
             }
         });
 
-        WATHER.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
-        WATHER.setText("DOUBLE BALL OF ICE CREAM / 2000");
-        WATHER.addActionListener(new java.awt.event.ActionListener() {
+        iceCreamDB.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        iceCreamDB.setText("DOUBLE BALL OF ICE CREAM / 2000");
+        iceCreamDB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                WATHERActionPerformed(evt);
+                iceCreamDBActionPerformed(evt);
             }
         });
 
-        SPRITE.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
-        SPRITE.setText("D.B OF ICE CREAM WITH COOKIES / 2300");
-        SPRITE.addActionListener(new java.awt.event.ActionListener() {
+        cookiesDb.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        cookiesDb.setText("D.B OF ICE CREAM WITH COOKIES / 2300");
+        cookiesDb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SPRITEActionPerformed(evt);
+                cookiesDbActionPerformed(evt);
             }
         });
 
-        KolaRoman.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
-        KolaRoman.setText("COOOKIS AND CHERRYS / 1400");
-        KolaRoman.addActionListener(new java.awt.event.ActionListener() {
+        cookiesAndCherrys.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        cookiesAndCherrys.setText("COOKIES AND CHERRYS / 1400");
+        cookiesAndCherrys.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                KolaRomanActionPerformed(evt);
+                cookiesAndCherrysActionPerformed(evt);
             }
         });
 
-        Fanta.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
-        Fanta.setText("COOKIES WITH AREQUIPE / 1200");
-        Fanta.addActionListener(new java.awt.event.ActionListener() {
+        cookiesWithArequipe.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        cookiesWithArequipe.setText("COOKIES WITH AREQUIPE / 1200");
+        cookiesWithArequipe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FantaActionPerformed(evt);
+                cookiesWithArequipeActionPerformed(evt);
             }
         });
 
-        CIFRUT.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
-        CIFRUT.setText("AREQUIPE / 650");
-        CIFRUT.addActionListener(new java.awt.event.ActionListener() {
+        arequipe.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        arequipe.setText("AREQUIPE / 650");
+        arequipe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CIFRUTActionPerformed(evt);
+                arequipeActionPerformed(evt);
             }
         });
 
-        JUICES.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
-        JUICES.setText("TRIPLE CONE OF ICE CREAM / 3000");
-        JUICES.addActionListener(new java.awt.event.ActionListener() {
+        iceCreamTripleCone.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        iceCreamTripleCone.setText("TRIPLE CONE OF ICE CREAM / 3000");
+        iceCreamTripleCone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JUICESActionPerformed(evt);
+                iceCreamTripleConeActionPerformed(evt);
             }
         });
 
-        YOGURT.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
-        YOGURT.setText("EXPLOSION OF CREAM / 3500");
-        YOGURT.addActionListener(new java.awt.event.ActionListener() {
+        iceCreamExplosion.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        iceCreamExplosion.setText("EXPLOSION OF CREAM / 3500");
+        iceCreamExplosion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                YOGURTActionPerformed(evt);
+                iceCreamExplosionActionPerformed(evt);
             }
         });
 
@@ -317,19 +319,19 @@ public class Sweets extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(WATHER, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(SPRITE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(COCACOLA, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(PEPSI, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(PonyMalta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(iceCreamDB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cookiesDb, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(candys, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(iceCreamBlueberry, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(iceCream, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Fanta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(KolaRoman, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(CIFRUT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(YOGURT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cookiesWithArequipe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cookiesAndCherrys, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(arequipe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(iceCreamExplosion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(JUICES)
+                                .addComponent(iceCreamTripleCone)
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -343,24 +345,24 @@ public class Sweets extends javax.swing.JFrame {
                 .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(19, 19, 19)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(KolaRoman, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PonyMalta))
+                    .addComponent(cookiesAndCherrys, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(iceCream))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Fanta)
-                    .addComponent(COCACOLA))
+                    .addComponent(cookiesWithArequipe)
+                    .addComponent(candys))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PEPSI)
-                    .addComponent(CIFRUT))
+                    .addComponent(iceCreamBlueberry)
+                    .addComponent(arequipe))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(WATHER)
-                    .addComponent(JUICES))
+                    .addComponent(iceCreamDB)
+                    .addComponent(iceCreamTripleCone))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(YOGURT)
-                    .addComponent(SPRITE))
+                    .addComponent(iceCreamExplosion)
+                    .addComponent(cookiesDb))
                 .addGap(58, 58, 58))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -409,94 +411,94 @@ public class Sweets extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void COCACOLAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_COCACOLAActionPerformed
+    private void candysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_candysActionPerformed
         // TODO add your handling code here:
         idProduct.setText("2455");
-        nameProduct.setText("ICE CREAM OF CHOCOLATE");
+        nameProduct.setText("COMBO OF CANDYS");
         amountProduct.setText("1");
         priceProduct.setText("1000");
-    }//GEN-LAST:event_COCACOLAActionPerformed
+    }//GEN-LAST:event_candysActionPerformed
 
-    private void PEPSIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PEPSIActionPerformed
+    private void iceCreamBlueberryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iceCreamBlueberryActionPerformed
         // TODO add your handling code here:
 
         idProduct.setText("4352");
-        nameProduct.setText("COMBO OF CANDYS");
+        nameProduct.setText("ICE CREAM BLUEBERRY");
         amountProduct.setText("1");
         priceProduct.setText("500");
-    }//GEN-LAST:event_PEPSIActionPerformed
+    }//GEN-LAST:event_iceCreamBlueberryActionPerformed
 
-    private void PonyMaltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PonyMaltaActionPerformed
+    private void iceCreamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iceCreamActionPerformed
         // TODO add your handling code here:
 
         idProduct.setText("3453");
-        nameProduct.setText("ICE CREAM OF BLUEBERRRY");
+        nameProduct.setText("ICE CREAM CHOCOLATE");
         amountProduct.setText("1");
         priceProduct.setText("1300");
-    }//GEN-LAST:event_PonyMaltaActionPerformed
+    }//GEN-LAST:event_iceCreamActionPerformed
 
-    private void WATHERActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WATHERActionPerformed
+    private void iceCreamDBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iceCreamDBActionPerformed
         // TODO add your handling code here:
 
         idProduct.setText("2523");
         nameProduct.setText("DOUBLE OF ICE CREAM");
         amountProduct.setText("1");
         priceProduct.setText("2000");
-    }//GEN-LAST:event_WATHERActionPerformed
+    }//GEN-LAST:event_iceCreamDBActionPerformed
 
-    private void SPRITEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SPRITEActionPerformed
+    private void cookiesDbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cookiesDbActionPerformed
         // TODO add your handling code here:
 
         idProduct.setText("6432");
         nameProduct.setText("D.B OF ICE CREAM WITH COOKIES");
         amountProduct.setText("1");
         priceProduct.setText("2300");
-    }//GEN-LAST:event_SPRITEActionPerformed
+    }//GEN-LAST:event_cookiesDbActionPerformed
 
-    private void KolaRomanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KolaRomanActionPerformed
+    private void cookiesAndCherrysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cookiesAndCherrysActionPerformed
         // TODO add your handling code here:
 
         idProduct.setText("5728");
         nameProduct.setText("COOKIES AND CHERRYS");
         amountProduct.setText("1");
         priceProduct.setText("1400");
-    }//GEN-LAST:event_KolaRomanActionPerformed
+    }//GEN-LAST:event_cookiesAndCherrysActionPerformed
 
-    private void FantaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FantaActionPerformed
+    private void cookiesWithArequipeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cookiesWithArequipeActionPerformed
         // TODO add your handling code here:
 
         idProduct.setText("3893");
         nameProduct.setText("COOKIES WITH AREQUIPE");
         amountProduct.setText("1");
         priceProduct.setText("1200");
-    }//GEN-LAST:event_FantaActionPerformed
+    }//GEN-LAST:event_cookiesWithArequipeActionPerformed
 
-    private void CIFRUTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CIFRUTActionPerformed
+    private void arequipeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arequipeActionPerformed
         // TODO add your handling code here:
 
         idProduct.setText("9482");
         nameProduct.setText("AREQUIPE");
         amountProduct.setText("1");
         priceProduct.setText("650");
-    }//GEN-LAST:event_CIFRUTActionPerformed
+    }//GEN-LAST:event_arequipeActionPerformed
 
-    private void JUICESActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JUICESActionPerformed
+    private void iceCreamTripleConeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iceCreamTripleConeActionPerformed
         // TODO add your handling code here:
 
         idProduct.setText("4456");
-        nameProduct.setText("TRIPLE CONE OF ICE CREAM ");
+        nameProduct.setText("TRIPLE CONE OF ICE CREAM");
         amountProduct.setText("1");
         priceProduct.setText("3000");
-    }//GEN-LAST:event_JUICESActionPerformed
+    }//GEN-LAST:event_iceCreamTripleConeActionPerformed
 
-    private void YOGURTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_YOGURTActionPerformed
+    private void iceCreamExplosionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iceCreamExplosionActionPerformed
         // TODO add your handling code here:
 
         idProduct.setText("5323");
         nameProduct.setText("EXPLOSION OF ICE CREAM");
         amountProduct.setText("1");
         priceProduct.setText("3500");
-    }//GEN-LAST:event_YOGURTActionPerformed
+    }//GEN-LAST:event_iceCreamExplosionActionPerformed
 
     private void amountProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_amountProductActionPerformed
         // TODO add your handling code here:
@@ -514,7 +516,7 @@ public class Sweets extends javax.swing.JFrame {
         String amountToRow = amountProduct.getText();
         String priceToRow = priceProduct.getText();
 
-        productSearch ps = new productSearch();
+        sweetSearch ps = new sweetSearch();
         boolean busquedaExitosa = ps.findProduct(nameToRow, priceToRow);
 
         if (busquedaExitosa) {
@@ -554,21 +556,21 @@ public class Sweets extends javax.swing.JFrame {
         String collectName = nameProduct.getText().trim();
         int substract = Integer.parseInt(collect);
 
-        db_productConnection db = new db_productConnection();
+        db_productConnectionsweet db = new db_productConnectionsweet();
 
         try {
             Connection cn = db.conectar();
 
-            String consult = "SELECT cantidadproducto, nombreproducto FROM productsp WHERE nombreproducto = ?";
+            String consult = "SELECT cantidadProducto, nombreProducto FROM productspsweets WHERE nombreProducto = ?";
             PreparedStatement pstConsulta = cn.prepareStatement(consult);
             pstConsulta.setString(1, collectName);
             ResultSet rs = pstConsulta.executeQuery();
 
             if (rs.next()) {
-                int stockActual = rs.getInt("cantidadproducto");
+                int stockActual = rs.getInt("cantidadProducto");
                 if (stockActual > substract) {
                     // Realizar la resta
-                    String sql = "UPDATE productsp SET cantidadproducto = cantidadproducto - ? WHERE nombreproducto = ?";
+                    String sql = "UPDATE productspsweets SET cantidadProducto = cantidadProducto - ? WHERE nombreProducto = ?";
                     PreparedStatement pst = cn.prepareStatement(sql);
                     pst.setInt(1, substract);
                     pst.setString(2, collectName);
@@ -670,20 +672,20 @@ public class Sweets extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton CIFRUT;
-    private javax.swing.JButton COCACOLA;
-    private javax.swing.JButton Fanta;
-    private javax.swing.JButton JUICES;
-    private javax.swing.JButton KolaRoman;
-    private javax.swing.JButton PEPSI;
-    private javax.swing.JButton PonyMalta;
-    private javax.swing.JButton SPRITE;
     private javax.swing.JButton UPDATE;
-    private javax.swing.JButton WATHER;
-    private javax.swing.JButton YOGURT;
     public javax.swing.JTextField amountProduct;
+    private javax.swing.JButton arequipe;
     public javax.swing.JButton btnconfirm;
     public javax.swing.JButton cancelPRO;
+    private javax.swing.JButton candys;
+    private javax.swing.JButton cookiesAndCherrys;
+    private javax.swing.JButton cookiesDb;
+    private javax.swing.JButton cookiesWithArequipe;
+    private javax.swing.JButton iceCream;
+    private javax.swing.JButton iceCreamBlueberry;
+    private javax.swing.JButton iceCreamDB;
+    private javax.swing.JButton iceCreamExplosion;
+    private javax.swing.JButton iceCreamTripleCone;
     public javax.swing.JTextField idProduct;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

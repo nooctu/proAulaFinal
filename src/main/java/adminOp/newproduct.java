@@ -5,7 +5,7 @@
  */
 package adminOp;
 import view.adminDash;
-import model.db_productConnection;
+import connections.db_productConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -128,7 +128,7 @@ public class newproduct extends javax.swing.JFrame {
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(171, 217, -1, 40));
 
         typeProduct.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
-        typeProduct.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose a option...", "Drink", "Food", "Candy" }));
+        typeProduct.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose a option...", "Drink", "Food", "Sweet" }));
         typeProduct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 typeProductActionPerformed(evt);
@@ -200,14 +200,15 @@ public class newproduct extends javax.swing.JFrame {
             try {
                 // Crear la consulta SQL
                 
-                String url = "jdbc:mysql://localhost:3306/loginpro?characterEncoding=utf8"; // Cambia 'nombredb' por tu base de datos
+                String url = "jdbc:mysql://localhost:3306/loginpro?characterEncoding=utf8";
                 String user = "root"; // Usuario de MySQL
                 String password = "";
                 
-                
+                if (selected.equals("Drink")) {
+                    
                 cn = DriverManager.getConnection(url, user, password);
             
-                String sql = "INSERT INTO productsp (nombreproducto, tipoproducto, precioproducto, cantidadproducto) VALUES (?, ?, ?, ?)";
+                String sql = "INSERT INTO productsp  (nombreproducto, tipoproducto, precioproducto, cantidadproducto) VALUES (?, ?, ?, ?)";
                 PreparedStatement pst = cn.prepareStatement(sql);
                 
                 // Establecer los valores en la consulta
@@ -216,11 +217,7 @@ public class newproduct extends javax.swing.JFrame {
                 pst.setString(3, priceproduct);
                 pst.setString(4, stackproduct);
                 
-                 
-
-                // Ejecutar la consulta
-                
-                if (nameproduct.isEmpty() || priceproduct.isEmpty() || selected.isEmpty() || stackproduct.isEmpty()) {
+                                if (nameproduct.isEmpty() || priceproduct.isEmpty() || selected.isEmpty() || stackproduct.isEmpty()) {
                     JOptionPane.showMessageDialog(null, "Please, complethe the fields.");
                     return;
                 }
@@ -233,6 +230,68 @@ public class newproduct extends javax.swing.JFrame {
                     returnMain.setVisible(true);
                     
                     this.dispose();
+                }
+                
+                }
+                
+                if (selected.equals("Food")) {
+                    
+                cn = DriverManager.getConnection(url, user, password);
+            
+                String sql = "INSERT INTO productspfood (nombreProducto, tipoProducto, precioProducto, cantidadProducto) VALUES (?, ?, ?, ?)";
+                PreparedStatement pst = cn.prepareStatement(sql);
+                
+                // Establecer los valores en la consulta
+                pst.setString(1, nameproduct);
+                pst.setString(2, selected);
+                pst.setString(3, priceproduct);
+                pst.setString(4, stackproduct);
+                
+                                if (nameproduct.isEmpty() || priceproduct.isEmpty() || selected.isEmpty() || stackproduct.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "Please, complethe the fields.");
+                    return;
+                }
+                                                    
+                int rowsInserted = pst.executeUpdate();
+                if (rowsInserted > 0) {
+                    JOptionPane.showMessageDialog(null, "Succesful Registration!");
+                    
+                    adminDash returnMain = new adminDash();
+                    returnMain.setVisible(true);
+                    
+                    this.dispose();
+                }
+                
+                }
+                
+                if (selected.equals("Sweet")) {
+                    
+                cn = DriverManager.getConnection(url, user, password);
+            
+                String sql = "INSERT INTO productspsweets (nombreProducto, tipoProducto, precioProducto, cantidadProducto) VALUES (?, ?, ?, ?)";
+                PreparedStatement pst = cn.prepareStatement(sql);
+                
+                // Establecer los valores en la consulta
+                pst.setString(1, nameproduct);
+                pst.setString(2, selected);
+                pst.setString(3, priceproduct);
+                pst.setString(4, stackproduct);
+                
+                                if (nameproduct.isEmpty() || priceproduct.isEmpty() || selected.isEmpty() || stackproduct.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "Please, complethe the fields.");
+                    return;
+                }
+                                                    
+                int rowsInserted = pst.executeUpdate();
+                if (rowsInserted > 0) {
+                    JOptionPane.showMessageDialog(null, "Succesful Registration!");
+                    
+                    adminDash returnMain = new adminDash();
+                    returnMain.setVisible(true);
+                    
+                    this.dispose();
+                }
+                
                 }
                 
 

@@ -5,7 +5,7 @@
  */
 package adminOp;
 import view.adminDash;
-import model.db_productConnection;
+import connections.db_productConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

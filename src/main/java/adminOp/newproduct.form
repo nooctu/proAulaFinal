@@ -183,7 +183,7 @@
             <StringItem index="0" value="Choose a option..."/>
             <StringItem index="1" value="Drink"/>
             <StringItem index="2" value="Food"/>
-            <StringItem index="3" value="Candy"/>
+            <StringItem index="3" value="Sweet"/>
           </StringArray>
         </Property>
       </Properties>

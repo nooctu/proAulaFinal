@@ -1,13 +1,13 @@
 package model;
 
-import connections.db_productConnection;
+import connections.db_productConnectionsweet;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
-public class foodSearch {
+public class sweetSearch {
 
     /**
      *
@@ -18,12 +18,12 @@ public class foodSearch {
      * @return
      */
     public boolean findProduct(String nameprod, String precioprod) {
-        db_productConnection db = new db_productConnection();
+        db_productConnectionsweet db = new db_productConnectionsweet();
         boolean accesoCorrecto = false;
 
         try {
             Connection cn = db.conectar();
-            String sql = "SELECT nombreProducto, precioProducto FROM productspfood WHERE nombreProducto = ? AND precioProducto = ?";
+            String sql = "SELECT nombreProducto, precioProducto FROM productspsweets WHERE nombreProducto = ? AND precioProducto = ?";
             PreparedStatement pst = cn.prepareStatement(sql);
             pst.setString(1, nameprod);
             pst.setString(2, precioprod);

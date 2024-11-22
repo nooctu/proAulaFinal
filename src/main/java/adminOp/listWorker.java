@@ -12,8 +12,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import model.db_connection;
-import model.db_workerConnection;
+import connections.db_connection;
+import connections.db_workerConnection;
 
 /**
  *

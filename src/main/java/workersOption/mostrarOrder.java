@@ -12,7 +12,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
-import model.db_connection;
+import connections.db_connection;
 
 /**
  *

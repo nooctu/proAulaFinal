@@ -5,6 +5,8 @@
 package clientOP;
 
 import view.clientDash;
+import clientOP.Sweets;
+import clientOP.Food;
 
 /**
  *
@@ -43,6 +45,11 @@ public class BuyProduct extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
         jButton1.setText("SWEETS");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         Back.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
         Back.setText("BACK");
@@ -148,6 +155,11 @@ public class BuyProduct extends javax.swing.JFrame {
 
     private void FOODActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FOODActionPerformed
         // TODO add your handling code here:
+        
+        Food access3 = new Food();
+        access3.setVisible(true);
+        
+        this.dispose();
     }//GEN-LAST:event_FOODActionPerformed
 
     private void DrinksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DrinksActionPerformed
@@ -156,10 +168,17 @@ public class BuyProduct extends javax.swing.JFrame {
         access.setVisible(true);
 
         this.dispose();
-         
-
         
     }//GEN-LAST:event_DrinksActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        
+        Sweets access2 = new Sweets();
+        access2.setVisible(true);
+        
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

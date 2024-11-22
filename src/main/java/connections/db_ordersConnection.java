@@ -1,11 +1,22 @@
-package model;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package connections;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
-public class db_productConnection {
+/**
+ *
+ * @author YOJHAN DAVID
+ */
+public class db_ordersConnection {
     
+        
     private static Connection con = null;
     
     
@@ -24,5 +35,5 @@ public class db_productConnection {
         }
         return con;
     }
+    
 }
-

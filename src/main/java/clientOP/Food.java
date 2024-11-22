@@ -8,8 +8,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
-import model.db_ordersConnection;
-import model.db_productConnectionfood;
+import connections.db_ordersConnection;
+import connections.db_productConnectionfood;
 import model.foodSearch;
 
 

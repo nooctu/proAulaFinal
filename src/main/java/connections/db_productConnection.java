@@ -1,10 +1,10 @@
-package model;
+package connections;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
-public class db_connection {
+public class db_productConnection {
     
     private static Connection con = null;
     
@@ -13,13 +13,14 @@ public class db_connection {
     private static final String user = "root"; // Ajusta según el usuario de tu BD
     private static final String pass = "";     // Ajusta según la contraseña de tu BD
 
-    public static Connection conectar() {
-        Connection con = null; 
+    public Connection conectar() {  
         try {
-            con = DriverManager.getConnection(url,user,pass);
-            System.out.println("Conexion establecida con exito.");
-        }catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error de conexion: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            con = DriverManager.getConnection(url, user, pass);
+            if (con != null) {
+                System.out.println("Succesfully conection!");
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error Conection: " + e.getMessage());
         }
         return con;
     }
